@@ -51,16 +51,16 @@ export default function StackingServicesCardsSection() {
       ref={containerRef}
       className="relative"
       style={
-        isLoaded ? { height: `${(services.length + 1) * 150}vh` } : undefined
+        isLoaded ? { height: `${(services.length + 1) * 200}vh` } : undefined
       }
       id="what-we-offer"
     >
       {/* BADGE - TITLE - DESCRIPTION - SERVICES */}
-      <div className="sticky top-0 mt-20 min-h-screen flex items-center justify-center overflow-hidden">
+      <div className="sticky top-0 mt-10 md:mt-20 min-h-screen flex items-center justify-center overflow-hidden">
         {/* BADGE - TITLE - DESCRIPTION - SERVICES */}
         <div className="px-6 lg:px-12 w-full">
           {/* BADGE - TITLE - DESCRIPTION */}
-          <div className="mb-14 flex flex-col lg:flex-row items-center gap-5 justify-between">
+          <div className="mb-8 md:mb-14 flex flex-col lg:flex-row items-center gap-5 justify-between">
             {/* BADGE - TITLE */}
             <div>
               {/* BADGE */}
@@ -105,8 +105,12 @@ export default function StackingServicesCardsSection() {
             </p>
           </div>
 
+          <p className="text-center md:hidden">
+            Scroll down to see our services
+          </p>
+
           {/* SERVICES */}
-          <div className="relative h-[60vh]">
+          <div className="relative h-[50vh]">
             {services.map((service, i) => (
               <StackingCard
                 key={service.title}
