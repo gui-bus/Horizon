@@ -60,7 +60,7 @@ export default function StackingServicesCardsSection() {
         {/* BADGE - TITLE - DESCRIPTION - SERVICES */}
         <div className="px-6 lg:px-12 w-full">
           {/* BADGE - TITLE - DESCRIPTION */}
-          <div className="mb-8 md:mb-14 flex flex-col lg:flex-row items-center gap-5 justify-between">
+          <div className="mb-6 md:mb-14 flex flex-col lg:flex-row items-center gap-5 justify-between">
             {/* BADGE - TITLE */}
             <div>
               {/* BADGE */}
@@ -105,7 +105,7 @@ export default function StackingServicesCardsSection() {
             </p>
           </div>
 
-          <p className="text-center md:hidden">
+          <p className="text-center md:hidden mb-2">
             Scroll down to see our services
           </p>
 

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { ContactFormSection } from "@/components/sections/contactFormSection";
 import { FeaturedDestinations } from "@/components/sections/featuredDestinations";
 import HeroScrollSection from "@/components/sections/heroScrollSection";
@@ -26,7 +26,7 @@ export default function Home() {
   //#endregion
 
   return (
-    <main className="relative">
+    <main className="relative overflow-x-hidden">
       <HeroScrollSection />
 
       <StackingServicesCardsSection />
