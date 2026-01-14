@@ -26,7 +26,7 @@ export default function Home() {
   //#endregion
 
   return (
-    <main className="relative overflow-x-hidden">
+    <main className="relative">
       <HeroScrollSection />
 
       <StackingServicesCardsSection />
