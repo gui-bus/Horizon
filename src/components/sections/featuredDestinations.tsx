@@ -42,7 +42,7 @@ export const items = [
   {
     title: "Marrakech Desert",
     subtitle: "Golden dunes and timeless silence",
-    image: "/content/destinations/marrakechDesert.avif",
+    image: "/content/destinations/marrakechDesert.webp",
     rating: 4.89,
     reviews: 365,
   },
