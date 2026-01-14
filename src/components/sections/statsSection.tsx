@@ -83,6 +83,7 @@ export function StatsSection() {
     <section
       ref={ref as React.RefObject<HTMLElement>}
       className="py-32 lg:py-40 relative overflow-hidden px-6 lg:px-12"
+      id="horizon-in-numbers"
     >
       <div className="absolute inset-0 bg-linear-to-b from-background via-muted/20 to-background" />
 

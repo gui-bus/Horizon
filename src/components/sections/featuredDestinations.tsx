@@ -125,8 +125,8 @@ export function FeaturedDestinations() {
   //#endregion
 
   return (
-    <section className="relative py-20 pb-10 md:pb-40 pl-6 lg:pl-12">
-      <div className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-0">
+    <section className="relative py-20 pb-10 md:pb-40 md:pl-6 lg:pl-12" id="featured-destinations">
+      <div className="relative py-12 sm:py-16 lg:py-20 md:px-4 sm:px-6 lg:px-0">
         <motion.div
           className="relative bg-foreground rounded-3xl"
           initial={{ opacity: 0 }}
@@ -135,7 +135,7 @@ export function FeaturedDestinations() {
           transition={{ duration: 0.6 }}
         >
           {/* TITLE - SUBTITLE - SEE MORE - CAROUSEL */}
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 justify-between">
+          <div className="flex flex-col lg:flex-row gap-8 p-5 lg:gap-12 justify-between">
             {/* TITLE - SUBTITLE - SEE MORE */}
             <div className="relative w-full lg:w-125">
               {/* TITLE - SUBTITLE - SEE MORE */}

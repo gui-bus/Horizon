@@ -58,7 +58,7 @@ export function ContactFormSection() {
   //#endregion
 
   return (
-    <section className="min-h-150 lg:min-h-175 grid lg:grid-cols-2 py-20">
+    <section className="min-h-150 lg:min-h-175 grid lg:grid-cols-2 py-20" id="reach-horizon-travels">
       {/* IMAGE */}
       <motion.div
         className="relative h-64 lg:h-auto"
@@ -98,7 +98,7 @@ export function ContactFormSection() {
             variants={staggerItem}
             className="text-3xl md:text-4xl font-bold mt-2 mb-6 text-foreground"
           >
-            Reach Horizon Travel
+            Reach Horizon Travels
           </motion.h2>
 
           <motion.p

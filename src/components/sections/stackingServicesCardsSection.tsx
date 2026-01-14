@@ -53,13 +53,14 @@ export default function StackingServicesCardsSection() {
       style={
         isLoaded ? { height: `${(services.length + 1) * 150}vh` } : undefined
       }
+      id="what-we-offer"
     >
       {/* BADGE - TITLE - DESCRIPTION - SERVICES */}
       <div className="sticky top-0 mt-20 min-h-screen flex items-center justify-center overflow-hidden">
         {/* BADGE - TITLE - DESCRIPTION - SERVICES */}
         <div className="px-6 lg:px-12 w-full">
           {/* BADGE - TITLE - DESCRIPTION */}
-          <div className="mb-14 flex items-center justify-between">
+          <div className="mb-14 flex flex-col lg:flex-row items-center gap-5 justify-between">
             {/* BADGE - TITLE */}
             <div>
               {/* BADGE */}
@@ -173,7 +174,7 @@ function StackingCard({
       className="absolute inset-0 rounded-3xl overflow-hidden bg-cover bg-center text-white"
     >
       {/* OVERLAY */}
-      <div className="absolute inset-0 bg-linear-to-r from-[#181818]/90 via-[#181818]/20 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-r from-[#181818]/90 via-[#181818]/60 md:via-[#181818]/20 to-transparent" />
 
       {/* INDEX - TITLE - DESCRIPTION */}
       <div className="relative z-10 p-8 md:p-12 h-full flex flex-col justify-between">

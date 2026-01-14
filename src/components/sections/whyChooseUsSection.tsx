@@ -61,7 +61,7 @@ const reasons = [
 
 export function WhyChooseUsSection() {
   return (
-    <section className="py-20 px-6 lg:px-12">
+    <section className="py-20 px-6 lg:px-12" id="why-choose-horizon">
       {/* TITLE */}
       <motion.div
         className="mx-auto max-w-2xl text-center mb-16"

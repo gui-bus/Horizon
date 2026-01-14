@@ -69,15 +69,17 @@ export function TravelFooter() {
       initial="hidden"
       animate={isVisible ? "visible" : "hidden"}
       variants={container}
+      id="footer"
     >
       <div className="max-w-4xl mx-auto px-6 text-center flex flex-col gap-8">
         {/* LOGO */}
-        <motion.h2
+        <motion.a
+          href="#hero"
           variants={item}
-          className="text-6xl md:text-7xl lg:text-[7rem] leading-[0.9]"
+          className="text-6xl md:text-7xl lg:text-[7rem] leading-[0.9] select-none text-foreground"
         >
           <span className="block font-mono font-semibold">HORIZON</span>
-        </motion.h2>
+        </motion.a>
 
         {/* DESCRIPTION */}
         <motion.p

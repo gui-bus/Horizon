@@ -143,7 +143,7 @@ export function TabbedTrips() {
   //#endregion
 
   return (
-    <section className="py-24 px-6 lg:px-12 bg-linear-to-b from-white to-gray-50">
+    <section className="py-24 px-6 lg:px-12" id="destinations">
       {/* BADGE - TITLE - DESCRIPTION */}
       <motion.div
         className="mb-16 text-center mx-auto"
