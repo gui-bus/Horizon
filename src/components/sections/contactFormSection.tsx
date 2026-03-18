@@ -1,234 +1,143 @@
-"use client";
-//#region Imports
-import { Input, TextArea } from "@heroui/react";
-import { CheckCircleIcon, PaperPlaneRightIcon } from "@phosphor-icons/react";
-import { motion } from "framer-motion";
+'use client';
+
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useRef, useState } from "react";
-import {
-  fadeInLeft,
-  fadeInRight,
-  staggerContainer,
-  staggerItem,
-  viewportOnce,
-} from "@/lib/motion";
-//#endregion
+import { useTranslations } from 'next-intl';
 
 export function ContactFormSection() {
-  //#region useStates
+  const t = useTranslations('Contact');
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
-  //#endregion
-
-  //#region Hooks
   const formRef = useRef<HTMLFormElement>(null);
-  //#endregion
 
-  //#region Handle functions
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const firstName = formData.get("firstName")?.toString().trim();
-    const lastName = formData.get("lastName")?.toString().trim();
     const email = formData.get("email")?.toString().trim();
-    const message = formData.get("message")?.toString().trim();
 
-    if (
-      !firstName ||
-      !lastName ||
-      !email ||
-      !message ||
-      !validateEmail(email)
-    ) {
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setStatus("error");
       setTimeout(() => setStatus("idle"), 4000);
       return;
     }
 
     setStatus("success");
-
     form.reset();
-
     setTimeout(() => setStatus("idle"), 4000);
   };
 
-  const validateEmail = (email: string) => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  };
-  //#endregion
-
   return (
-    <section className="min-h-150 lg:min-h-175 grid lg:grid-cols-2 py-20" id="reach-horizon-travels">
-      {/* IMAGE */}
-      <motion.div
-        className="relative h-64 lg:h-auto"
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewportOnce}
-        variants={fadeInLeft}
-      >
-        <Image
+    <section className="relative py-24 lg:py-48 overflow-hidden bg-background" id="reach-horizon-travels">
+      {/* BACKGROUND DECORATIVE IMAGE */}
+      <div className="absolute inset-0 z-0">
+        <Image 
           src="/content/banners/passportBanner.webp"
-          alt="Passport banner"
-          className="absolute inset-0 w-full h-full object-cover rounded-r-3xl"
-          width={0}
-          height={0}
-          sizes="100vw"
+          alt="Contact Background"
+          fill
+          className="object-cover opacity-10 grayscale"
         />
-        <div className="absolute inset-0 bg-foreground/20 rounded-r-3xl" />
-      </motion.div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
+      </div>
 
-      {/* CONTENT */}
-      <div className="p-6 lg:p-12 flex items-center">
-        <motion.div
-          className="w-full"
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-          variants={staggerContainer}
-        >
-          <motion.span
-            variants={staggerItem}
-            className="text-sm font-medium text-accent uppercase tracking-wider"
-          >
-            Start Today
-          </motion.span>
-
-          <motion.h2
-            variants={staggerItem}
-            className="text-3xl md:text-4xl font-bold mt-2 mb-6 text-foreground"
-          >
-            Reach Horizon Travels
-          </motion.h2>
-
-          <motion.p
-            variants={staggerItem}
-            className="text-muted-foreground mb-8 text-lg"
-          >
-            Questions, suggestions, or ready to start your next adventure? Our
-            team is here to help you explore the world.
-          </motion.p>
-
-          {/* Form Card */}
+      <div className="max-w-[1000px] mx-auto px-6 lg:px-12 relative z-10">
+        
+        {/* EDITORIAL HEADER */}
+        <div className="text-center mb-24 lg:mb-32">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportOnce}
-            variants={fadeInRight}
-            className="relative bg-card backdrop-blur-md rounded-3xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center"
           >
-            <form ref={formRef} className="space-y-6" onSubmit={handleSubmit}>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <InputField
-                  id="firstName"
-                  label="First Name"
-                  placeholder="John"
-                />
-                <InputField id="lastName" label="Last Name" placeholder="Doe" />
-              </div>
-
-              <InputField
-                id="email"
-                label="Email"
-                placeholder="john@example.com"
-                type="email"
-              />
-
-              <TextAreaField
-                id="message"
-                label="Message"
-                placeholder="How can we help you plan your next journey?"
-              />
-
-              {status === "success" && (
-                <p className="text-green-500 text-sm font-medium flex items-center gap-2">
-                  <CheckCircleIcon weight="duotone" className="w-5 h-5" />
-                  Your message has been sent! We'll contact you soon.
-                </p>
-              )}
-
-              {status === "error" && (
-                <p className="text-red-500 text-sm font-medium">
-                  Please fill all required fields correctly.
-                </p>
-              )}
-
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <button
-                  type="submit"
-                  className="w-full bg-accent text-white text-lg py-4 rounded-3xl shadow-lg hover:shadow-xl transition-all h-14 flex items-center gap-5 justify-center cursor-pointer"
-                >
-                  <PaperPlaneRightIcon weight="duotone" size={28} />
-                  Send Message
-                </button>
-              </motion.div>
-            </form>
+            <span className="text-[10px] font-bold uppercase tracking-[0.6em] text-accent mb-8">{t('badge')}</span>
+            <h2 className="text-6xl md:text-8xl lg:text-[10rem] font-serif font-light text-foreground leading-none tracking-tight mb-12">
+              Start Your <br />
+              <span className="italic text-accent/40">Journey</span>
+            </h2>
+            <p className="max-w-xl text-xl text-foreground/50 font-light leading-relaxed italic">
+              {t('description')}
+            </p>
           </motion.div>
+        </div>
+
+        {/* MINIMAL INQUIRY FORM */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          className="bg-background border border-border p-10 lg:p-24 shadow-[0_50px_100px_rgba(0,0,0,0.05)]"
+        >
+          <form ref={formRef} className="space-y-16" onSubmit={handleSubmit}>
+            <div className="grid md:grid-cols-2 gap-16">
+              <div className="relative group">
+                <input
+                  name="firstName"
+                  className="w-full bg-transparent border-b border-border/60 py-4 outline-none font-light text-lg focus:border-accent transition-all placeholder:text-foreground/20"
+                  placeholder={t('fields.firstName')}
+                  required
+                />
+              </div>
+              <div className="relative group">
+                <input
+                  name="lastName"
+                  className="w-full bg-transparent border-b border-border/60 py-4 outline-none font-light text-lg focus:border-accent transition-all placeholder:text-foreground/20"
+                  placeholder={t('fields.lastName')}
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="relative">
+              <input
+                name="email"
+                type="email"
+                className="w-full bg-transparent border-b border-border/60 py-4 outline-none font-light text-lg focus:border-accent transition-all placeholder:text-foreground/20"
+                placeholder={t('fields.email')}
+                required
+              />
+            </div>
+
+            <div className="relative">
+              <textarea
+                name="message"
+                rows={2}
+                className="w-full bg-transparent border-b border-border/60 py-4 outline-none font-light text-lg focus:border-accent transition-all resize-none placeholder:text-foreground/20"
+                placeholder={t('fields.placeholder_message')}
+                required
+              />
+            </div>
+
+            <div className="flex flex-col items-center gap-12 pt-8">
+              <button
+                type="submit"
+                className="group flex flex-col items-center gap-6"
+              >
+                <div className="w-20 h-20 rounded-full border border-border flex items-center justify-center group-hover:bg-foreground group-hover:text-background transition-all duration-700">
+                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+                <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-foreground/40 group-hover:text-foreground transition-colors">{t('submit')}</span>
+              </button>
+
+              <AnimatePresence>
+                {status === "success" && (
+                  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-accent text-[10px] font-bold uppercase tracking-widest">{t('success')}</motion.p>
+                )}
+              </AnimatePresence>
+            </div>
+          </form>
         </motion.div>
+
+        {/* BOTTOM DECORATIVE AREA */}
+        <div className="mt-32 text-center">
+           <div className="inline-flex items-center gap-8">
+              <div className="w-12 h-px bg-border/60" />
+              <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-foreground/20">Private Inquiry &bull; 2026</span>
+              <div className="w-12 h-px bg-border/60" />
+           </div>
+        </div>
       </div>
     </section>
-  );
-}
-
-function InputField({
-  id,
-  label,
-  placeholder,
-  type = "text",
-}: {
-  id: string;
-  label: string;
-  placeholder: string;
-  type?: string;
-}) {
-  return (
-    <div className="relative">
-      <label
-        htmlFor={id}
-        className="mb-2 block text-sm font-medium text-foreground"
-      >
-        {label}
-      </label>
-      <Input
-        id={id}
-        name={id}
-        type={type}
-        placeholder={placeholder}
-        required
-        className="bg-background w-full text-foreground placeholder-muted-foreground border border-default rounded-3xl focus:ring-2 focus:ring-accent py-3 px-4"
-      />
-    </div>
-  );
-}
-
-function TextAreaField({
-  id,
-  label,
-  placeholder,
-}: {
-  id: string;
-  label: string;
-  placeholder: string;
-}) {
-  return (
-    <div className="relative">
-      <label
-        htmlFor={id}
-        className="mb-2 block text-sm font-medium text-foreground"
-      >
-        {label}
-      </label>
-      <TextArea
-        id={id}
-        name={id}
-        placeholder={placeholder}
-        rows={5}
-        required
-        className="w-full text-foreground placeholder-muted-foreground border border-default rounded-3xl focus:ring-2 focus:ring-accent py-3 px-4"
-      />
-    </div>
   );
 }

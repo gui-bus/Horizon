@@ -1,66 +1,68 @@
 "use client";
-//#region Imports
+
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { useRef } from "react";
-//#endregion
 
 export default function MaskRevealSection() {
-  //#region useRefs
+  const t = useTranslations("MaskReveal");
   const containerRef = useRef<HTMLDivElement>(null);
-  //#endregion
 
-  //#region Hooks
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
   });
 
-  const maskSize = useTransform(scrollYProgress, [0.2, 0.6], ["0%", "150%"]);
-  const textOpacity = useTransform(scrollYProgress, [0.4, 0.5], [0, 1]);
+  const maskSize = useTransform(scrollYProgress, [0.1, 0.4], ["0%", "150%"]);
+  const textOpacity = useTransform(scrollYProgress, [0.3, 0.5], [0, 1]);
 
   const maskImage = useTransform(
     maskSize,
-    (v) => `radial-gradient(circle at center, black ${v}, transparent ${v})`
+    (v) => `radial-gradient(circle at center, black ${v}, transparent ${v})`,
   );
-  //#endregion
 
   return (
     <section
       ref={containerRef}
-      className="relative overflow-hidden"
+      className="relative min-h-[120vh] bg-white"
       id="divider"
     >
-      <div className="sticky py-64 top-0 flex items-center justify-center">
+      <div className="sticky h-screen top-0 flex items-center justify-center overflow-hidden">
+        {/* REVEAL IMAGE */}
         <motion.div
           style={{
             WebkitMaskImage: maskImage,
             maskImage: maskImage,
           }}
-          className="absolute inset-0"
+          className="absolute inset-0 z-10"
         >
           <Image
             src="/content/banners/dividerBanner.webp"
-            alt=""
+            alt="Reveal"
             fill
-            className="object-cover"
+            className="object-cover scale-105"
             priority
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-accent/10 mix-blend-multiply" />
         </motion.div>
 
+        {/* STATIC BACKGROUND */}
+        <div className="absolute inset-0 bg-muted" />
+
+        {/* CONTENT */}
         <motion.div
           style={{ opacity: textOpacity }}
-          className="relative z-10 text-center px-6"
+          className="relative z-20 text-center px-6 max-w-4xl mx-auto"
         >
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-extralight text-background tracking-tight">
-            See the World{" "}
-            <span className="font-serif font-semibold">Differently</span>
+          <h2 className="text-6xl md:text-[8rem] font-black tracking-tighter leading-[0.85] mb-12 uppercase text-white">
+            {t("title_part1")}
+            <br />
+            <span className="text-accent">{t("title_part2")}</span>
           </h2>
 
-          <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-white">
-            Discover hidden gems, breathtaking views, and moments that turn into
-            lifelong memories.
+          <p className="max-w-xl mx-auto text-lg md:text-2xl leading-relaxed text-white">
+            {t("description")}
           </p>
         </motion.div>
       </div>

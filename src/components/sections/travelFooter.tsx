@@ -1,156 +1,132 @@
-"use client";
-//#region Imports
-import { Button, Input } from "@heroui/react";
+'use client';
+
 import {
   InstagramLogoIcon,
   LinkedinLogoIcon,
   TwitterLogoIcon,
   YoutubeLogoIcon,
+  ArrowUpIcon,
 } from "@phosphor-icons/react";
-import { motion } from "framer-motion";
 import Link from "next/link";
-import type React from "react";
-import { useState } from "react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-
-//#endregion
-
-//#region Constants
-const socialLinks = [
-  { icon: TwitterLogoIcon, href: "#", label: "Twitter" },
-  { icon: InstagramLogoIcon, href: "#", label: "Instagram" },
-  { icon: LinkedinLogoIcon, href: "#", label: "LinkedIn" },
-  { icon: YoutubeLogoIcon, href: "#", label: "YouTube" },
-];
-//#endregion
+import { useTranslations } from 'next-intl';
 
 export function TravelFooter() {
-  //#region Hooks
-  const { ref, isVisible } = useScrollAnimation(0.1);
-  //#endregion
+  const t = useTranslations('Footer');
+  const tc = useTranslations('Common');
 
-  //#region useStates
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  //#endregion
-
-  //#region Handle functions
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setEmail("");
-    }, 4000);
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-  //#endregion
-
-  //#region Motion Variants
-  const container = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.15 } },
-  };
-
-  const item: any = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-  //#endregion
 
   return (
-    <motion.footer
-      ref={ref as React.RefObject<HTMLElement>}
-      className="bg-background border-t border-border/20 py-16 lg:py-24"
-      initial="hidden"
-      animate={isVisible ? "visible" : "hidden"}
-      variants={container}
-      id="footer"
-    >
-      <div className="max-w-4xl mx-auto px-6 text-center flex flex-col gap-8">
-        {/* LOGO */}
-        <motion.a
-          href="#hero"
-          variants={item}
-          className="text-6xl md:text-7xl lg:text-[7rem] leading-[0.9] select-none text-foreground"
-        >
-          <span className="block font-mono font-semibold">HORIZON</span>
-        </motion.a>
-
-        {/* DESCRIPTION */}
-        <motion.p
-          variants={item}
-          className="text-muted-foreground text-lg md:text-base"
-        >
-          Explore the world with curated experiences, expert guidance, and
-          unforgettable journeys.
-        </motion.p>
-
-        {/* NEWSLETTER */}
-        <motion.form
-          variants={item}
-          className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6"
-          onSubmit={handleSubscribe}
-        >
-          <Input
-            type="email"
-            placeholder="Enter your email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="rounded-full px-4 py-3 w-full sm:w-auto flex-1 border border-default focus:ring-2 focus:ring-accent"
-          />
-          <Button
-            type="submit"
-            className="rounded-full h-12 w-full max-w-xs bg-accent text-white hover:bg-accent/90 transition-all flex items-center justify-center gap-2"
-          >
-            Subscribe
-          </Button>
-        </motion.form>
-
-        {submitted && (
-          <motion.p variants={item} className="text-green-500 text-sm mb-6">
-            Subscribed successfully!
-          </motion.p>
-        )}
-
-        {/* SOCIALS */}
-        <motion.div variants={item} className="flex justify-center gap-4 mb-6">
-          {socialLinks.map((social) => {
-            const Icon = social.icon;
-            return (
-              <a
-                key={social.label}
-                href={social.href}
-                className="w-10 h-10 rounded-full bg-foreground/5 flex items-center justify-center hover:bg-accent-soft-hover transition-colors duration-300 group"
-                aria-label={social.label}
-              >
-                <Icon
-                  weight="duotone"
-                  className="w-4 h-4 text-muted-foreground group-hover:text-accent transition-colors"
-                />
-              </a>
-            );
-          })}
-        </motion.div>
-
-        {/* COPYRIGHT */}
-        <motion.p variants={item} className="text-muted-foreground text-sm">
-          &copy; 2026 Horizon Travel. All rights reserved. | Designed by{" "}
-          <Link
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.linkedin.com/in/gui-bus/"
-            className="text-accent hover:underline transition-all duration-300"
-          >
-            guibus.dev
+    <footer className="bg-background pt-32 pb-12 border-t border-border/50" id="footer">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        
+        {/* LARGE EDITORIAL BRANDING */}
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-12 mb-32">
+          <Link href="#hero" className="flex flex-col">
+            <span className="font-serif text-6xl md:text-8xl lg:text-[10rem] font-light tracking-tight text-foreground leading-[0.8] uppercase">
+              {tc('brand_name')}
+            </span>
+            <span className="text-[10px] font-bold uppercase tracking-[1em] text-accent mt-6 ml-2">
+              {tc('brand_suffix')}
+            </span>
           </Link>
-        </motion.p>
+          
+          <div className="max-w-xs lg:text-right">
+            <p className="text-lg text-foreground/40 font-light leading-relaxed italic">
+              {t('description')}
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mb-32 border-y border-border/30 py-24">
+          {/* NAVIGATION */}
+          <div className="space-y-10">
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.5em] text-accent">{t('navigation_title')}</h4>
+            <ul className="space-y-6">
+              {['Collection', 'Destinations', 'Expertise', 'Bespoke'].map((item) => (
+                <li key={item}>
+                  <Link href="#" className="font-serif text-xl font-light text-foreground/60 hover:text-accent transition-colors duration-500">
+                    {t(`links.${item}`)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* COMPANY */}
+          <div className="space-y-10">
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.5em] text-accent">{t('company_title')}</h4>
+            <ul className="space-y-6">
+              {['Philosophy', 'Sustainability', 'Safety', 'Journal'].map((item) => (
+                <li key={item}>
+                  <Link href="#" className="font-serif text-xl font-light text-foreground/60 hover:text-accent transition-colors duration-500">
+                    {t(`links.${item}`)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* NEWSLETTER / INQUIRY */}
+          <div className="lg:col-span-2 space-y-10 lg:pl-20 border-l border-border/30">
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.5em] text-accent">{t('newsletter_title')}</h4>
+            <div className="space-y-8">
+              <p className="font-serif text-2xl font-light text-foreground/60 leading-relaxed max-w-sm">
+                {t('newsletter_desc')}
+              </p>
+              <div className="relative group max-w-md">
+                <input 
+                  type="email" 
+                  placeholder={t('newsletter_placeholder')} 
+                  className="w-full bg-transparent border-b border-border/60 py-4 outline-none font-light text-lg focus:border-accent transition-all placeholder:text-foreground/20"
+                />
+                <button className="absolute right-0 bottom-4 text-[9px] font-bold uppercase tracking-[0.3em] text-accent group-hover:translate-x-2 transition-all duration-500">
+                  Join
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* BOTTOM AREA */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12 pt-12">
+          
+          {/* SOCIALS */}
+          <div className="flex gap-10">
+            {[
+              { icon: TwitterLogoIcon, label: "Twitter" },
+              { icon: InstagramLogoIcon, label: "Instagram" },
+              { icon: LinkedinLogoIcon, label: "LinkedIn" },
+              { icon: YoutubeLogoIcon, label: "YouTube" }
+            ].map((social, i) => (
+              <a key={i} href="#" className="text-foreground/30 hover:text-accent transition-colors duration-500">
+                <social.icon weight="bold" size={20} />
+              </a>
+            ))}
+          </div>
+
+          {/* LEGAL & BACK TO TOP */}
+          <div className="flex flex-wrap justify-center items-center gap-10 text-[9px] font-bold uppercase tracking-[0.4em] text-foreground/30">
+             <Link href="#" className="hover:text-accent transition-colors">{tc('privacy')}</Link>
+             <Link href="#" className="hover:text-accent transition-colors">{tc('terms')}</Link>
+             <span className="hidden md:block">&bull;</span>
+             <span>&copy; 2026 {tc('brand_name')}</span>
+             
+             <button 
+                onClick={scrollToTop}
+                className="flex items-center gap-4 group text-accent ml-4"
+              >
+                <span className="group-hover:tracking-[0.6em] transition-all duration-500">{tc('back_to_top')}</span>
+                <div className="w-8 h-8 rounded-full border border-accent/20 flex items-center justify-center group-hover:bg-accent group-hover:text-background transition-all duration-500">
+                  <ArrowUpIcon size={14} weight="bold" />
+                </div>
+              </button>
+          </div>
+
+        </div>
       </div>
-    </motion.footer>
+    </footer>
   );
 }

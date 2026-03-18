@@ -1,287 +1,156 @@
-"use client";
+'use client';
 
-//#region Imports
-import { Card } from "@heroui/react";
-import {
-  AirplaneTakeoffIcon,
-  ClockIcon,
-  StarIcon,
-} from "@phosphor-icons/react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import { fadeInUp, viewportOnce } from "@/lib/motion";
-
-//#endregion
-
-//#region Constants
-const categories = [
-  {
-    id: "wild-escapes",
-    label: "Wild Escapes",
-    trips: [
-      {
-        name: "Amazon Adventure",
-        duration: "7 days",
-        price: "$2,100",
-        image: "/content/trips/amazonia.webp",
-        rating: 4.97,
-        reviews: 320,
-      },
-      {
-        name: "Patagonia Trek",
-        duration: "10 days",
-        price: "$2,500",
-        image: "/content/trips/patagonia.webp",
-        rating: 4.95,
-        reviews: 180,
-      },
-      {
-        name: "Australian Outback",
-        duration: "8 days",
-        price: "$2,400",
-        image: "/content/trips/australia.webp",
-        rating: 4.89,
-        reviews: 150,
-      },
-      {
-        name: "Alaskan Wilderness",
-        duration: "7 days",
-        price: "$2,300",
-        image: "/content/trips/alaska.webp",
-        rating: 4.94,
-        reviews: 200,
-      },
-    ],
-  },
-  {
-    id: "cultural-immersion",
-    label: "Cultural Immersion",
-    trips: [
-      {
-        name: "Kyoto Temples",
-        duration: "5 days",
-        price: "$1,900",
-        image: "/content/trips/kyoto.webp",
-        rating: 4.97,
-        reviews: 1052,
-      },
-      {
-        name: "Parisian Art Tour",
-        duration: "4 days",
-        price: "$2,000",
-        image: "/content/trips/paris.webp",
-        rating: 4.95,
-        reviews: 980,
-      },
-      {
-        name: "Rome Heritage",
-        duration: "5 days",
-        price: "$1,850",
-        image: "/content/trips/roma.webp",
-        rating: 4.91,
-        reviews: 680,
-      },
-      {
-        name: "Mexico City Culture",
-        duration: "6 days",
-        price: "$1,950",
-        image: "/content/trips/mexico.webp",
-        rating: 4.92,
-        reviews: 700,
-      },
-    ],
-  },
-  {
-    id: "urban-pulse",
-    label: "Urban Pulse",
-    trips: [
-      {
-        name: "New York Vibes",
-        duration: "4 days",
-        price: "$2,200",
-        image: "/content/trips/newYork.webp",
-        rating: 4.94,
-        reviews: 880,
-      },
-      {
-        name: "Tokyo Streets",
-        duration: "5 days",
-        price: "$2,300",
-        image: "/content/trips/tokyo.webp",
-        rating: 4.95,
-        reviews: 910,
-      },
-      {
-        name: "London Life",
-        duration: "4 days",
-        price: "$2,100",
-        image: "/content/trips/london.webp",
-        rating: 4.92,
-        reviews: 860,
-      },
-      {
-        name: "Hong Kong Buzz",
-        duration: "4 days",
-        price: "$2,250",
-        image: "/content/trips/hongKong.webp",
-        rating: 4.93,
-        reviews: 790,
-      },
-    ],
-  },
-];
-//#endregion
+import { useTranslations } from 'next-intl';
 
 export function TabbedTrips() {
-  //#region useStates
+  const t = useTranslations('TabbedTrips');
+  const tc = useTranslations('Common');
   const [activeTab, setActiveTab] = useState("wild-escapes");
-  //#endregion
 
-  //#region Filters
+  const categories = [
+    {
+      id: "wild-escapes",
+      label: t('categories.wild'),
+      trips: [
+        { id: 'amazon', name: t('trips.amazon'), duration: "7 days", price: "$2,100", image: "/content/trips/amazonia.webp" },
+        { id: 'patagonia', name: t('trips.patagonia'), duration: "10 days", price: "$2,500", image: "/content/trips/patagonia.webp" },
+        { id: 'australia', name: t('trips.australia'), duration: "8 days", price: "$2,400", image: "/content/trips/australia.webp" },
+        { id: 'alaska', name: t('trips.alaska'), duration: "7 days", price: "$2,300", image: "/content/trips/alaska.webp" },
+      ],
+    },
+    {
+      id: "cultural-immersion",
+      label: t('categories.culture'),
+      trips: [
+        { id: 'kyoto', name: t('trips.kyoto'), duration: "5 days", price: "$1,900", image: "/content/trips/kyoto.webp" },
+        { id: 'paris', name: t('trips.paris'), duration: "4 days", price: "$2,000", image: "/content/trips/paris.webp" },
+        { id: 'rome', name: t('trips.rome'), duration: "5 days", price: "$1,850", image: "/content/trips/roma.webp" },
+        { id: 'mexico', name: t('trips.mexico'), duration: "6 days", price: "$1,950", image: "/content/trips/mexico.webp" },
+      ],
+    },
+    {
+      id: "urban-pulse",
+      label: t('categories.urban'),
+      trips: [
+        { id: 'ny', name: t('trips.ny'), duration: "4 days", price: "$2,200", image: "/content/trips/newYork.webp" },
+        { id: 'tokyo', name: t('trips.tokyo'), duration: "5 days", price: "$2,300", image: "/content/trips/tokyo.webp" },
+        { id: 'london', name: t('trips.london'), duration: "4 days", price: "$2,100", image: "/content/trips/london.webp" },
+        { id: 'hk', name: t('trips.hk'), duration: "4 days", price: "$2,250", image: "/content/trips/hongKong.webp" },
+      ],
+    },
+  ];
+
   const activeCategory = categories.find((c) => c.id === activeTab);
-  //#endregion
 
   return (
-    <section className="py-24 px-6 lg:px-12" id="destinations">
-      {/* BADGE - TITLE - DESCRIPTION */}
-      <motion.div
-        className="mb-16 text-center mx-auto"
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewportOnce}
-        variants={fadeInUp}
-      >
-        {/* BADGE */}
-        <span className="text-sm font-medium uppercase tracking-widest text-accent">
-          Destinations
-        </span>
-
-        {/* TITLE */}
-        <h2 className="text-4xl md:text-6xl font-semibold tracking-tight mb-6">
-          Discover Your{" "}
-          <motion.span
-            className="relative inline-block font-serif italic font-normal text-muted-foreground"
+    <section className="py-24 lg:py-48 bg-background overflow-hidden" id="destinations">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        
+        {/* TOP INTRO */}
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 mb-24 lg:mb-40">
+          <motion.div 
+            className="lg:col-span-7"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={viewportOnce}
+            variants={fadeInUp}
           >
-            Next Adventure
-            <motion.span
-              variants={{
-                hidden: { scaleX: 0 },
-                visible: {
-                  scaleX: 1,
-                  transition: {
-                    duration: 0.9,
-                    ease: "easeOut",
-                    delay: 0.25,
-                  },
-                },
-              }}
-              className="absolute left-0 -bottom-3 h-0.75 w-[130%] origin-left bg-linear-to-r from-accent via-accent/60 to-transparent"
-            />
-          </motion.span>
-        </h2>
-
-        {/* DESCRIPTION */}
-        <p className="mt-2 text-gray-600">
-          Curated experiences for every traveler. Explore our top destinations.
-        </p>
-      </motion.div>
-
-      {/* TABS */}
-      <motion.div
-        className="mb-12 flex flex-wrap justify-center gap-3"
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={viewportOnce}
-        transition={{ duration: 0.4 }}
-      >
-        {categories.map((category) => (
-          <motion.button
-            key={category.id}
-            onClick={() => setActiveTab(category.id)}
-            className={`px-12 cursor-pointer text-lg py-2 rounded-tr-3xl rounded-bl-3xl  transition-all duration-300 ${
-              activeTab === category.id
-                ? "bg-accent text-white shadow-md font-medium"
-                : "text-foreground"
-            }`}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
+            <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-accent mb-8 block">{t('badge')}</span>
+            <h2 className="text-6xl md:text-8xl lg:text-[9rem] font-serif font-light text-foreground leading-[0.8] tracking-tight">
+              Curated <br />
+              <span className="italic">Experiences</span>
+            </h2>
+          </motion.div>
+          <motion.div 
+            className="lg:col-span-5 flex flex-col justify-end pb-4"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={viewportOnce}
+            transition={{ delay: 0.4 }}
           >
-            {category.label}
-          </motion.button>
-        ))}
-      </motion.div>
+            <p className="text-xl text-foreground/40 font-light leading-relaxed italic border-l border-border pl-10">
+              {t('description')}
+            </p>
+          </motion.div>
+        </div>
 
-      {/* TRIPS GRID */}
-      <motion.div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 select-none">
-        <AnimatePresence mode="wait">
-          {activeCategory?.trips.map((trip, index) => (
-            <motion.div
-              key={trip.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ delay: 0.05 * index, duration: 0.35 }}
-              whileHover={{ y: -5, scale: 1.02 }}
-            >
-              <Card className="relative overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 h-120">
-                {/* IMAGE */}
-                <Image
-                  src={trip.image}
-                  alt={trip.name}
-                  fill
-                  className="object-cover"
-                />
-
-                {/* DURATION */}
-                <span className="absolute top-0 right-0 w-fit px-10 py-2 bg-black/50 backdrop-blur-md rounded-bl-3xl flex gap-2 text-white">
-                  <ClockIcon weight="duotone" size={20} />
-                  {trip.duration} trip
+        {/* INTERACTIVE CONTENT */}
+        <div className="grid lg:grid-cols-12 gap-20">
+          
+          {/* VERTICAL SIDEBAR CATEGORIES */}
+          <div className="lg:col-span-3 flex flex-col gap-12 border-l border-border/40 pl-8">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveTab(category.id)}
+                className="group flex flex-col items-start text-left gap-4"
+              >
+                <span className={`text-[9px] font-bold uppercase tracking-[0.4em] transition-colors duration-500 ${activeTab === category.id ? 'text-accent' : 'text-foreground/20'}`}>
+                  Explore Selection
                 </span>
+                <span className={`text-2xl lg:text-3xl font-serif font-light transition-all duration-500 ${activeTab === category.id ? 'text-foreground pl-4 border-l-2 border-accent' : 'text-foreground/20 group-hover:text-foreground/40'}`}>
+                  {category.label}
+                </span>
+              </button>
+            ))}
+          </div>
 
-                {/* RATINGS - PRICE - NAME - CTA */}
-                <div className="absolute bottom-0 left-0 w-full p-5 bg-black/50 backdrop-blur-md flex flex-col gap-2 text-white">
-                  {/* RATINGS - PRICE */}
-                  <div className="flex flex-col 2xl:flex-row items-start 2xl:items-center justify-between text-sm ">
-                    {/* RATINGS */}
-                    <div className="flex items-center gap-1">
-                      <StarIcon
-                        size={16}
-                        weight="fill"
-                        className="text-yellow-400"
+          {/* DYNAMIC RESULTS DISPLAY */}
+          <div className="lg:col-span-9">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
+              <AnimatePresence mode="wait">
+                {activeCategory?.trips.map((trip, index) => (
+                  <motion.div
+                    key={trip.id}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="flex flex-col group"
+                  >
+                    <div className="relative aspect-[4/5] overflow-hidden mb-10 shadow-[0_30px_80px_rgba(0,0,0,0.05)] border border-border/20">
+                      <Image
+                        src={trip.image}
+                        alt={trip.name}
+                        fill
+                        className="object-cover transition-transform duration-[2s] group-hover:scale-110"
                       />
-                      <span>
-                        {trip.rating} ({trip.reviews})
-                      </span>
+                      <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-all duration-700" />
                     </div>
 
-                    {/* PRICE */}
-                    <span className="text-2xl 2xl:text-3xl mt-2 2xl:mt-0">
-                      {trip.price} <span className="text-sm">/ person</span>
-                    </span>
-                  </div>
+                    <div className="flex flex-col gap-6">
+                      <div className="flex items-center gap-4">
+                        <span className="font-serif italic text-2xl text-accent/40">0{index + 1}</span>
+                        <div className="h-px flex-1 bg-border/50" />
+                        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-foreground/30">{trip.duration}</span>
+                      </div>
+                      
+                      <div className="flex justify-between items-start">
+                        <h3 className="text-3xl lg:text-4xl font-serif font-light text-foreground tracking-tight uppercase leading-none group-hover:text-accent transition-colors duration-500">
+                          {trip.name}
+                        </h3>
+                        <span className="font-serif italic text-2xl text-foreground/60">{trip.price}</span>
+                      </div>
 
-                  {/* NAME */}
-                  <h3 className="text-lg md:text-xl leading-snug truncate">
-                    {trip.name}
-                  </h3>
+                      <button className="flex items-center gap-6 group/btn mt-4">
+                         <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover/btn:bg-foreground group-hover/btn:text-background transition-all duration-500">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                         </div>
+                         <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-foreground/40 group-hover/btn:text-foreground transition-colors">{tc('view_details')}</span>
+                      </button>
+                    </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </div>
+          </div>
 
-                  {/* CTA */}
-                  <button
-                    type="button"
-                    className="bg-accent text-white hover:bg-accent/90 transition-colors py-2 w-full justify-center rounded-3xl h-12 flex items-center gap-5 mt-3"
-                  >
-                    <AirplaneTakeoffIcon size={28} /> Book now
-                  </button>
-                </div>
-              </Card>
-            </motion.div>
-          ))}
-        </AnimatePresence>
-      </motion.div>
+        </div>
+      </div>
     </section>
   );
 }
