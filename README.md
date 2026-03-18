@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://horizon-travels.vercel.app/"><img src="https://img.shields.io/badge/Live_Demo-HORIZON-c5a059?style=for-the-badge&logo=vercel" alt="Live Demo" /></a>
+  <a href="https://horizon.guibus.dev/"><img src="https://img.shields.io/badge/Live_Demo-HORIZON-c5a059?style=for-the-badge&logo=vercel" alt="Live Demo" /></a>
 </p>
 
 <p align="center">
