@@ -1,0 +1,237 @@
+{
+  "Metadata": {
+    "title": "Horizon — Veja o mundo em cores",
+    "description": "A Horizon Travels organiza jornadas imersivas ao redor do globo, conectando viajantes com experiências autênticas e planejamento simplificado."
+  },
+  "Common": {
+    "brand_name": "HORIZON",
+    "brand_suffix": "Travels",
+    "learn_more": "Saiba mais",
+    "view_details": "Ver Detalhes",
+    "from": "De",
+    "phase": "Fase",
+    "explore": "Explorar",
+    "back_to_top": "Início",
+    "established": "Estabelecida em",
+    "locations": "Locais Globais",
+    "rating": "Avaliação Média",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Serviço",
+    "legal": "Jurídico",
+    "scroll_discover": "Role para Descobrir"
+  },
+  "LanguageSelector": {
+    "label": "Mudar idioma",
+    "pt": "Português",
+    "en": "Inglês"
+  },
+  "Hero": {
+    "badge": "Veja o mundo em cores",
+    "title_part1": "Além do",
+    "title_part2": "Horizonte",
+    "description": "Paisagens icônicas, vistas de tirar o fôlego e lugares inesquecíveis. A Horizon conecta você a destinos feitos para serem vistos, sentidos e lembrados.",
+    "cta_plan": "Planeje sua Jornada",
+    "cta_explore": "Explorar Destinos",
+    "scroll": "Role para explorar",
+    "menu_offer": "O Que Oferecemos",
+    "menu_why": "Por Que Nós",
+    "menu_destinations": "Destinos",
+    "boutique_tag": "Experiência Boutique"
+  },
+  "Services": {
+    "badge": "A Coleção",
+    "title": "Nossa",
+    "title_highlight": "Expertise",
+    "description": "Cada jornada que criamos é pensada em torno de experiências, não apenas roteiros. De culturas imersivas a paisagens selvagens e refúgios personalizados, cada caminho é desenhado para ser pessoal, leve e inesquecível.",
+    "scroll_hint": "Role para baixo para ver nossos serviços",
+    "items": {
+      "wild": {
+        "title": "Escapadas Selvagens",
+        "description": "De paisagens dramáticas a destinos remotos, estas jornadas são feitas para exploração, liberdade e conexão com a natureza.",
+        "tag": "Natureza Pura"
+      },
+      "culture": {
+        "title": "Imersão Cultural",
+        "description": "Experiências profundas enraizadas na história, arte, gastronomia e tradições locais. Feito para viajantes que querem entender a alma de um destino.",
+        "tag": "Alma Autêntica"
+      },
+      "urban": {
+        "title": "Pulso Urbano",
+        "description": "Cidades vibrantes, cultura moderna, arquitetura e cenas criativas. Perfeito para viajantes atraídos por design, estilo de vida e energia urbana.",
+        "tag": "Vida Moderna"
+      },
+      "bespoke": {
+        "title": "Jornadas Sob Medida",
+        "description": "Viagens totalmente personalizadas construídas em torno de seus interesses, ritmo e estilo. Sem modelos prontos. Apenas experiências feitas para você.",
+        "tag": "Feito para Você"
+      }
+    }
+  },
+  "WhyChooseUs": {
+    "title": "Por Que Escolher a",
+    "title_highlight": "Filosofia",
+    "description": "Viagens desenhadas com intenção, profundidade e significado.",
+    "footer_tag": "Compromisso com a Excelência",
+    "items": {
+      "experts": {
+        "title": "Curadoria de Especialistas",
+        "description": "Cada jornada é cuidadosamente desenhada por especialistas com profundo conhecimento local e perspectiva global."
+      },
+      "trusted": {
+        "title": "Confiável e Fluido",
+        "description": "Do planejamento à chegada, cada detalhe é tratado com cuidado, transparência e confiabilidade."
+      },
+      "standards": {
+        "title": "Padrões Excepcionais",
+        "description": "Trabalhamos apenas com experiências, guias e estadias que atendem aos nossos mais altos critérios de qualidade."
+      },
+      "planning": {
+        "title": "Planejamento sem Esforço",
+        "description": "Itinerários complexos tornados simples. Removemos as barreiras para que você foque na experiência."
+      },
+      "pace": {
+        "title": "Seu Tempo, Seu Ritmo",
+        "description": "Jornadas desenhadas em torno do seu ritmo e estilo de viagem — nunca apressadas, nunca genéricas."
+      },
+      "personal": {
+        "title": "Verdadeiramente Pessoal",
+        "description": "Sem modelos prontos, sem turismo de massa. Cada viagem é moldada por quem você é e como quer viajar."
+      }
+    }
+  },
+  "FeaturedDestinations": {
+    "badge": "Destinos Curados",
+    "title_part1": "Destinos",
+    "title_part2": "Curados",
+    "cta_explore": "Explorar Todos os Destinos",
+    "book_now": "Reserve agora",
+    "items": {
+      "kyoto": {
+        "title": "Kyoto",
+        "subtitle": "Tradição, natureza e beleza serena",
+        "tag": "Cultural"
+      },
+      "patagonia": {
+        "title": "Patagônia",
+        "subtitle": "Paisagens indomáveis no fim do mundo",
+        "tag": "Aventura"
+      },
+      "santorini": {
+        "title": "Santorini",
+        "subtitle": "Falésias, luz e horizontes infinitos",
+        "tag": "Luxo"
+      },
+      "swiss": {
+        "title": "Alpes Suíços",
+        "subtitle": "Picos majestosos e serenidade alpina",
+        "tag": "Natureza"
+      },
+      "marrakech": {
+        "title": "Deserto de Marrakech",
+        "subtitle": "Dunas douradas e silêncio atemporal",
+        "tag": "Deserto"
+      }
+    }
+  },
+  "Stats": {
+    "badge": "Em números",
+    "title": "Horizon em Números",
+    "description": "Celebrando as jornadas, destinos e experiências inesquecíveis de nossos viajantes pelo mundo.",
+    "items": {
+      "destinations": {
+        "label": "Destinos",
+        "description": "Cuidadosamente selecionados pelo mundo"
+      },
+      "travelers": {
+        "label": "Viajantes",
+        "description": "Jornadas completadas mensalmente"
+      },
+      "photos": {
+        "label": "Fotos Capturadas",
+        "description": "Momentos épicos documentados"
+      },
+      "rating": {
+        "label": "Avaliação Média",
+        "description": "Satisfação dos viajantes verificada"
+      }
+    }
+  },
+  "MaskReveal": {
+    "title_part1": "Veja o Mundo",
+    "title_part2": "Diferente",
+    "description": "Descubra joias escondidas, vistas de tirar o fôlego e momentos que se tornam memórias para a vida toda."
+  },
+  "TabbedTrips": {
+    "badge": "Coleção",
+    "title": "Experiências",
+    "title_highlight": "Selecionadas",
+    "description": "Experiências selecionadas para cada tipo de viajante. Explore nossos principais destinos.",
+    "trip_label": "viagem",
+    "person": "pessoa",
+    "book_now": "Reserve agora",
+    "categories": {
+      "wild": "Escapadas Selvagens",
+      "culture": "Imersão Cultural",
+      "urban": "Pulso Urbano"
+    },
+    "trips": {
+      "amazon": "Aventura na Amazônia",
+      "patagonia": "Trilha na Patagônia",
+      "australia": "Outback Australiano",
+      "alaska": "Selva do Alasca",
+      "kyoto": "Templos de Kyoto",
+      "paris": "Tour de Arte em Paris",
+      "rome": "Herança de Roma",
+      "mexico": "Cultura na Cid. do México",
+      "ny": "Vibrações de Nova York",
+      "tokyo": "Ruas de Tóquio",
+      "london": "Vida em Londres",
+      "hk": "Agito de Hong Kong"
+    }
+  },
+  "Contact": {
+    "badge": "Inquérito",
+    "title_part1": "Comece sua",
+    "title_part2": "Jornada",
+    "description": "Dúvidas, sugestões ou pronto para começar sua próxima aventura? Nossa equipe está aqui para ajudar você a explorar o mundo.",
+    "speak_title": "Fale conosco",
+    "speak_desc": "Estamos aqui para ajudar você a planejar sua próxima aventura dos sonhos.",
+    "fields": {
+      "firstName": "Nome",
+      "lastName": "Sobrenome",
+      "email": "E-mail",
+      "message": "Mensagem",
+      "placeholder_firstName": "João",
+      "placeholder_lastName": "Silva",
+      "placeholder_email": "joao@exemplo.com",
+      "placeholder_message": "Conte-nos sobre o destino dos seus sonhos..."
+    },
+    "success": "Sua mensagem foi enviada! Entraremos em contato em breve.",
+    "error": "Por favor, preencha todos os campos obrigatórios corretamente.",
+    "submit": "Enviar Inquérito"
+  },
+  "Footer": {
+    "navigation_title": "Descobrir",
+    "company_title": "Empresa",
+    "social_title": "Siga-nos",
+    "connect_title": "Conectar",
+    "newsletter_title": "Newsletter",
+    "newsletter_desc": "Receba as últimas dicas de viagem e ofertas diretamente na sua caixa de entrada.",
+    "description": "Explore o mundo com experiências curadas, orientação especializada e jornadas inesquecíveis.",
+    "newsletter_placeholder": "Digite seu e-mail",
+    "newsletter_button": "Inscrever-se",
+    "newsletter_success": "Inscrito com sucesso!",
+    "copyright": "Todos os direitos reservados.",
+    "design_by": "Design por",
+    "links": {
+      "Collection": "Coleção",
+      "Destinations": "Destinos",
+      "Expertise": "Expertise",
+      "Bespoke": "Sob Medida",
+      "Philosophy": "Filosofia",
+      "Sustainability": "Sustentabilidade",
+      "Safety": "Segurança",
+      "Journal": "Diário"
+    }
+  }
+}

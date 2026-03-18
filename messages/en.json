@@ -1,0 +1,237 @@
+{
+  "Metadata": {
+    "title": "Horizon — See the world in full color",
+    "description": "Horizon Travels curates immersive journeys around the globe, connecting travelers with authentic experiences and seamless planning."
+  },
+  "Common": {
+    "brand_name": "HORIZON",
+    "brand_suffix": "Travels",
+    "learn_more": "Learn more",
+    "view_details": "View Details",
+    "from": "From",
+    "phase": "Phase",
+    "explore": "Explore",
+    "back_to_top": "Top",
+    "established": "Established",
+    "locations": "Global Locations",
+    "rating": "Average Rating",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "legal": "Legal",
+    "scroll_discover": "Scroll to Discover"
+  },
+  "LanguageSelector": {
+    "label": "Change language",
+    "pt": "Portuguese",
+    "en": "English"
+  },
+  "Hero": {
+    "badge": "See the world in full color",
+    "title_part1": "Beyond the",
+    "title_part2": "Horizon",
+    "description": "Iconic landscapes, breathtaking views, and unforgettable places. Horizon connects you to destinations made to be seen, felt, and remembered.",
+    "cta_plan": "Plan Your Journey",
+    "cta_explore": "Explore Destinations",
+    "scroll": "Scroll to explore",
+    "menu_offer": "What We Offer",
+    "menu_why": "Why Choose Us",
+    "menu_destinations": "Destinations",
+    "boutique_tag": "Boutique Experience"
+  },
+  "Services": {
+    "badge": "The Collection",
+    "title": "Our",
+    "title_highlight": "Expertise",
+    "description": "Every journey we create is thoughtfully curated around experiences, not itineraries. From immersive cultures to untamed landscapes and tailor-made escapes, each path is designed to feel personal, effortless, and unforgettable.",
+    "scroll_hint": "Scroll down to see our services",
+    "items": {
+      "wild": {
+        "title": "Wild Escapes",
+        "description": "From dramatic landscapes to remote destinations, these journeys are designed for exploration, freedom, and connection with nature.",
+        "tag": "Pure Nature"
+      },
+      "culture": {
+        "title": "Cultural Immersion",
+        "description": "Immersive experiences rooted in history, art, gastronomy, and local traditions. Crafted for travelers who want to understand the soul of a destination.",
+        "tag": "Authentic Soul"
+      },
+      "urban": {
+        "title": "Urban Pulse",
+        "description": "Vibrant cities, modern culture, architecture, and creative scenes. Perfect for travelers drawn to design, lifestyle, and urban energy.",
+        "tag": "Modern Life"
+      },
+      "bespoke": {
+        "title": "Bespoke Journeys",
+        "description": "Fully customized journeys built around your interests, pace, and travel style. No templates. Just experiences designed around you.",
+        "tag": "Tailored for You"
+      }
+    }
+  },
+  "WhyChooseUs": {
+    "title": "Why Choose",
+    "title_highlight": "Philosophy",
+    "description": "Travel designed with intention, depth, and meaning.",
+    "footer_tag": "Commitment to Excellence",
+    "items": {
+      "experts": {
+        "title": "Curated by Experts",
+        "description": "Every journey is thoughtfully designed by travel specialists with deep local knowledge and global perspective."
+      },
+      "trusted": {
+        "title": "Trusted & Seamless",
+        "description": "From planning to arrival, every detail is handled with care, transparency, and reliability."
+      },
+      "standards": {
+        "title": "Exceptional Standards",
+        "description": "We partner only with experiences, guides, and stays that meet our highest quality benchmarks."
+      },
+      "planning": {
+        "title": "Effortless Planning",
+        "description": "Complex itineraries made simple. We remove friction so you can focus on the experience."
+      },
+      "pace": {
+        "title": "Your Time, Your Pace",
+        "description": "Journeys designed around your rhythm, interests, and and travel style — never rushed, never generic."
+      },
+      "personal": {
+        "title": "Truly Personal",
+        "description": "No templates, no mass tourism. Every trip is shaped around who you are and how you want to travel."
+      }
+    }
+  },
+  "FeaturedDestinations": {
+    "badge": "Curated Destinations",
+    "title_part1": "Curated",
+    "title_part2": "Destinations",
+    "cta_explore": "Explore All Destinations",
+    "book_now": "Book now",
+    "items": {
+      "kyoto": {
+        "title": "Kyoto",
+        "subtitle": "Tradition, nature, and quiet beauty",
+        "tag": "Cultural"
+      },
+      "patagonia": {
+        "title": "Patagonia",
+        "subtitle": "Untamed landscapes at the edge of the world",
+        "tag": "Adventure"
+      },
+      "santorini": {
+        "title": "Santorini",
+        "subtitle": "Cliffs, light, and endless horizons",
+        "tag": "Luxury"
+      },
+      "swiss": {
+        "title": "Swiss Alps",
+        "subtitle": "Majestic peaks and alpine serenity",
+        "tag": "Nature"
+      },
+      "marrakech": {
+        "title": "Marrakech Desert",
+        "subtitle": "Golden dunes and timeless silence",
+        "tag": "Desert"
+      }
+    }
+  },
+  "Stats": {
+    "badge": "By the numbers",
+    "title": "Horizon in Numbers",
+    "description": "Celebrating the journeys, destinations, and unforgettable experiences of our travelers worldwide.",
+    "items": {
+      "destinations": {
+        "label": "Destinations",
+        "description": "Carefully curated worldwide"
+      },
+      "travelers": {
+        "label": "Travelers",
+        "description": "Journeys completed monthly"
+      },
+      "photos": {
+        "label": "Photos Captured",
+        "description": "Epic moments documented"
+      },
+      "rating": {
+        "label": "Average Rating",
+        "description": "Traveler satisfaction verified"
+      }
+    }
+  },
+  "MaskReveal": {
+    "title_part1": "See the World",
+    "title_part2": "Differently",
+    "description": "Discover hidden gems, breathtaking views, and moments that turn into lifelong memories."
+  },
+  "TabbedTrips": {
+    "badge": "Collection",
+    "title": "Selected",
+    "title_highlight": "Experiences",
+    "description": "Curated experiences for every traveler. Explore our top destinations.",
+    "trip_label": "trip",
+    "person": "person",
+    "book_now": "Book now",
+    "categories": {
+      "wild": "Wild Escapes",
+      "culture": "Cultural Immersion",
+      "urban": "Urban Pulse"
+    },
+    "trips": {
+      "amazon": "Amazon Adventure",
+      "patagonia": "Patagonia Trek",
+      "australia": "Australian Outback",
+      "alaska": "Alaskan Wilderness",
+      "kyoto": "Kyoto Temples",
+      "paris": "Parisian Art Tour",
+      "rome": "Rome Heritage",
+      "mexico": "Mexico City Culture",
+      "ny": "New York Vibes",
+      "tokyo": "Tokyo Streets",
+      "london": "London Life",
+      "hk": "Hong Kong Buzz"
+    }
+  },
+  "Contact": {
+    "badge": "Inquiry",
+    "title_part1": "Start Your",
+    "title_part2": "Journey",
+    "description": "Questions, suggestions, or ready to start your next adventure? Our team is here to help you explore the world.",
+    "speak_title": "Speak with us",
+    "speak_desc": "We are here to help you plan your next dream adventure.",
+    "fields": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "message": "Message",
+      "placeholder_firstName": "John",
+      "placeholder_lastName": "Doe",
+      "placeholder_email": "john@example.com",
+      "placeholder_message": "Tell us about your dream destination..."
+    },
+    "success": "Your message has been sent! We'll contact you soon.",
+    "error": "Please fill all required fields correctly.",
+    "submit": "Send Inquiry"
+  },
+  "Footer": {
+    "navigation_title": "Discover",
+    "company_title": "Company",
+    "social_title": "Follow Us",
+    "connect_title": "Connect",
+    "newsletter_title": "Newsletter",
+    "newsletter_desc": "Get the latest travel tips and offers directly in your inbox.",
+    "description": "Explore the world with curated experiences, expert guidance, and unforgettable journeys.",
+    "newsletter_placeholder": "Enter your email",
+    "newsletter_button": "Subscribe",
+    "newsletter_success": "Subscribed successfully!",
+    "copyright": "All rights reserved.",
+    "design_by": "Design by",
+    "links": {
+      "Collection": "Collection",
+      "Destinations": "Destinations",
+      "Expertise": "Expertise",
+      "Bespoke": "Bespoke",
+      "Philosophy": "Philosophy",
+      "Sustainability": "Sustainability",
+      "Safety": "Safety",
+      "Journal": "Journal"
+    }
+  }
+}
