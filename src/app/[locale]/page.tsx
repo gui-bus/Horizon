@@ -1,9 +1,9 @@
 "use client";
+import BoutiqueServices from "@/components/sections/boutiqueServices";
 import { ContactFormSection } from "@/components/sections/contactFormSection";
 import { FeaturedDestinations } from "@/components/sections/featuredDestinations";
 import HeroScrollSection from "@/components/sections/heroScrollSection";
 import MaskRevealSection from "@/components/sections/maskRevealSection";
-import BoutiqueServices from "@/components/sections/boutiqueServices";
 import { StatsSection } from "@/components/sections/statsSection";
 import { TabbedTrips } from "@/components/sections/tabbedTrips";
 import { TravelFooter } from "@/components/sections/travelFooter";

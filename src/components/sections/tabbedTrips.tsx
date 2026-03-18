@@ -1,45 +1,117 @@
-'use client';
+"use client";
 
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { fadeInUp, viewportOnce } from "@/lib/motion";
-import { useTranslations } from 'next-intl';
 
 export function TabbedTrips() {
-  const t = useTranslations('TabbedTrips');
-  const tc = useTranslations('Common');
+  const t = useTranslations("TabbedTrips");
+  const tc = useTranslations("Common");
   const [activeTab, setActiveTab] = useState("wild-escapes");
 
   const categories = [
     {
       id: "wild-escapes",
-      label: t('categories.wild'),
+      label: t("categories.wild"),
       trips: [
-        { id: 'amazon', name: t('trips.amazon'), duration: "7 days", price: "$2,100", image: "/content/trips/amazonia.webp" },
-        { id: 'patagonia', name: t('trips.patagonia'), duration: "10 days", price: "$2,500", image: "/content/trips/patagonia.webp" },
-        { id: 'australia', name: t('trips.australia'), duration: "8 days", price: "$2,400", image: "/content/trips/australia.webp" },
-        { id: 'alaska', name: t('trips.alaska'), duration: "7 days", price: "$2,300", image: "/content/trips/alaska.webp" },
+        {
+          id: "amazon",
+          name: t("trips.amazon"),
+          duration: "7 days",
+          price: "$2,100",
+          image: "/content/trips/amazonia.webp",
+        },
+        {
+          id: "patagonia",
+          name: t("trips.patagonia"),
+          duration: "10 days",
+          price: "$2,500",
+          image: "/content/trips/patagonia.webp",
+        },
+        {
+          id: "australia",
+          name: t("trips.australia"),
+          duration: "8 days",
+          price: "$2,400",
+          image: "/content/trips/australia.webp",
+        },
+        {
+          id: "alaska",
+          name: t("trips.alaska"),
+          duration: "7 days",
+          price: "$2,300",
+          image: "/content/trips/alaska.webp",
+        },
       ],
     },
     {
       id: "cultural-immersion",
-      label: t('categories.culture'),
+      label: t("categories.culture"),
       trips: [
-        { id: 'kyoto', name: t('trips.kyoto'), duration: "5 days", price: "$1,900", image: "/content/trips/kyoto.webp" },
-        { id: 'paris', name: t('trips.paris'), duration: "4 days", price: "$2,000", image: "/content/trips/paris.webp" },
-        { id: 'rome', name: t('trips.rome'), duration: "5 days", price: "$1,850", image: "/content/trips/roma.webp" },
-        { id: 'mexico', name: t('trips.mexico'), duration: "6 days", price: "$1,950", image: "/content/trips/mexico.webp" },
+        {
+          id: "kyoto",
+          name: t("trips.kyoto"),
+          duration: "5 days",
+          price: "$1,900",
+          image: "/content/trips/kyoto.webp",
+        },
+        {
+          id: "paris",
+          name: t("trips.paris"),
+          duration: "4 days",
+          price: "$2,000",
+          image: "/content/trips/paris.webp",
+        },
+        {
+          id: "rome",
+          name: t("trips.rome"),
+          duration: "5 days",
+          price: "$1,850",
+          image: "/content/trips/roma.webp",
+        },
+        {
+          id: "mexico",
+          name: t("trips.mexico"),
+          duration: "6 days",
+          price: "$1,950",
+          image: "/content/trips/mexico.webp",
+        },
       ],
     },
     {
       id: "urban-pulse",
-      label: t('categories.urban'),
+      label: t("categories.urban"),
       trips: [
-        { id: 'ny', name: t('trips.ny'), duration: "4 days", price: "$2,200", image: "/content/trips/newYork.webp" },
-        { id: 'tokyo', name: t('trips.tokyo'), duration: "5 days", price: "$2,300", image: "/content/trips/tokyo.webp" },
-        { id: 'london', name: t('trips.london'), duration: "4 days", price: "$2,100", image: "/content/trips/london.webp" },
-        { id: 'hk', name: t('trips.hk'), duration: "4 days", price: "$2,250", image: "/content/trips/hongKong.webp" },
+        {
+          id: "ny",
+          name: t("trips.ny"),
+          duration: "4 days",
+          price: "$2,200",
+          image: "/content/trips/newYork.webp",
+        },
+        {
+          id: "tokyo",
+          name: t("trips.tokyo"),
+          duration: "5 days",
+          price: "$2,300",
+          image: "/content/trips/tokyo.webp",
+        },
+        {
+          id: "london",
+          name: t("trips.london"),
+          duration: "4 days",
+          price: "$2,100",
+          image: "/content/trips/london.webp",
+        },
+        {
+          id: "hk",
+          name: t("trips.hk"),
+          duration: "4 days",
+          price: "$2,250",
+          image: "/content/trips/hongKong.webp",
+        },
       ],
     },
   ];
@@ -47,25 +119,29 @@ export function TabbedTrips() {
   const activeCategory = categories.find((c) => c.id === activeTab);
 
   return (
-    <section className="py-24 lg:py-48 bg-background overflow-hidden" id="destinations">
+    <section
+      className="py-24 lg:py-48 bg-background overflow-hidden"
+      id="destinations"
+    >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        
         {/* TOP INTRO */}
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 mb-24 lg:mb-40">
-          <motion.div 
+          <motion.div
             className="lg:col-span-7"
             initial="hidden"
             whileInView="visible"
             viewport={viewportOnce}
             variants={fadeInUp}
           >
-            <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-accent mb-8 block">{t('badge')}</span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-accent mb-8 block">
+              {t("badge")}
+            </span>
             <h2 className="text-6xl md:text-8xl lg:text-[9rem] font-serif font-light text-foreground leading-[0.8] tracking-tight">
               Curated <br />
               <span className="italic">Experiences</span>
             </h2>
           </motion.div>
-          <motion.div 
+          <motion.div
             className="lg:col-span-5 flex flex-col justify-end pb-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -73,26 +149,30 @@ export function TabbedTrips() {
             transition={{ delay: 0.4 }}
           >
             <p className="text-xl text-foreground/40 font-light leading-relaxed italic border-l border-border pl-10">
-              {t('description')}
+              {t("description")}
             </p>
           </motion.div>
         </div>
 
         {/* INTERACTIVE CONTENT */}
         <div className="grid lg:grid-cols-12 gap-20">
-          
           {/* VERTICAL SIDEBAR CATEGORIES */}
           <div className="lg:col-span-3 flex flex-col gap-12 border-l border-border/40 pl-8">
             {categories.map((category) => (
               <button
                 key={category.id}
+                type="button"
                 onClick={() => setActiveTab(category.id)}
                 className="group flex flex-col items-start text-left gap-4"
               >
-                <span className={`text-[9px] font-bold uppercase tracking-[0.4em] transition-colors duration-500 ${activeTab === category.id ? 'text-accent' : 'text-foreground/20'}`}>
+                <span
+                  className={`text-[9px] font-bold uppercase tracking-[0.4em] transition-colors duration-500 ${activeTab === category.id ? "text-accent" : "text-foreground/20"}`}
+                >
                   Explore Selection
                 </span>
-                <span className={`text-2xl lg:text-3xl font-serif font-light transition-all duration-500 ${activeTab === category.id ? 'text-foreground pl-4 border-l-2 border-accent' : 'text-foreground/20 group-hover:text-foreground/40'}`}>
+                <span
+                  className={`text-2xl lg:text-3xl font-serif font-light transition-all duration-500 ${activeTab === category.id ? "text-foreground pl-4 border-l-2 border-accent" : "text-foreground/20 group-hover:text-foreground/40"}`}
+                >
                   {category.label}
                 </span>
               </button>
@@ -124,23 +204,43 @@ export function TabbedTrips() {
 
                     <div className="flex flex-col gap-6">
                       <div className="flex items-center gap-4">
-                        <span className="font-serif italic text-2xl text-accent/40">0{index + 1}</span>
+                        <span className="font-serif italic text-2xl text-accent/40">
+                          0{index + 1}
+                        </span>
                         <div className="h-px flex-1 bg-border/50" />
-                        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-foreground/30">{trip.duration}</span>
+                        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-foreground/30">
+                          {trip.duration}
+                        </span>
                       </div>
-                      
+
                       <div className="flex justify-between items-start">
                         <h3 className="text-3xl lg:text-4xl font-serif font-light text-foreground tracking-tight uppercase leading-none group-hover:text-accent transition-colors duration-500">
                           {trip.name}
                         </h3>
-                        <span className="font-serif italic text-2xl text-foreground/60">{trip.price}</span>
+                        <span className="font-serif italic text-2xl text-foreground/60">
+                          {trip.price}
+                        </span>
                       </div>
 
-                      <button className="flex items-center gap-6 group/btn mt-4">
-                         <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover/btn:bg-foreground group-hover/btn:text-background transition-all duration-500">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                         </div>
-                         <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-foreground/40 group-hover/btn:text-foreground transition-colors">{tc('view_details')}</span>
+                      <button
+                        type="button"
+                        className="flex items-center gap-6 group/btn mt-4"
+                      >
+                        <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover/btn:bg-foreground group-hover/btn:text-background transition-all duration-500">
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                          >
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                          </svg>
+                        </div>
+                        <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-foreground/40 group-hover/btn:text-foreground transition-colors">
+                          {tc("view_details")}
+                        </span>
                       </button>
                     </div>
                   </motion.div>
@@ -148,7 +248,6 @@ export function TabbedTrips() {
               </AnimatePresence>
             </div>
           </div>
-
         </div>
       </div>
     </section>

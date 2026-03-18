@@ -47,7 +47,7 @@ export function TravelFooter() {
             <ul className="space-y-6">
               {['Collection', 'Destinations', 'Expertise', 'Bespoke'].map((item) => (
                 <li key={item}>
-                  <Link href="#" className="font-serif text-xl font-light text-foreground/60 hover:text-accent transition-colors duration-500">
+                  <Link href="#footer" className="font-serif text-xl font-light text-foreground/60 hover:text-accent transition-colors duration-500">
                     {t(`links.${item}`)}
                   </Link>
                 </li>
@@ -61,7 +61,7 @@ export function TravelFooter() {
             <ul className="space-y-6">
               {['Philosophy', 'Sustainability', 'Safety', 'Journal'].map((item) => (
                 <li key={item}>
-                  <Link href="#" className="font-serif text-xl font-light text-foreground/60 hover:text-accent transition-colors duration-500">
+                  <Link href="#footer" className="font-serif text-xl font-light text-foreground/60 hover:text-accent transition-colors duration-500">
                     {t(`links.${item}`)}
                   </Link>
                 </li>
@@ -82,7 +82,7 @@ export function TravelFooter() {
                   placeholder={t('newsletter_placeholder')} 
                   className="w-full bg-transparent border-b border-border/60 py-4 outline-none font-light text-lg focus:border-accent transition-all placeholder:text-foreground/20"
                 />
-                <button className="absolute right-0 bottom-4 text-[9px] font-bold uppercase tracking-[0.3em] text-accent group-hover:translate-x-2 transition-all duration-500">
+                <button type="button" className="absolute right-0 bottom-4 text-[9px] font-bold uppercase tracking-[0.3em] text-accent group-hover:translate-x-2 transition-all duration-500">
                   Join
                 </button>
               </div>
@@ -101,7 +101,7 @@ export function TravelFooter() {
               { icon: LinkedinLogoIcon, label: "LinkedIn" },
               { icon: YoutubeLogoIcon, label: "YouTube" }
             ].map((social, i) => (
-              <a key={i} href="#" className="text-foreground/30 hover:text-accent transition-colors duration-500">
+              <a key={i} href="#footer" className="text-foreground/30 hover:text-accent transition-colors duration-500">
                 <social.icon weight="bold" size={20} />
               </a>
             ))}
@@ -109,12 +109,13 @@ export function TravelFooter() {
 
           {/* LEGAL & BACK TO TOP */}
           <div className="flex flex-wrap justify-center items-center gap-10 text-[9px] font-bold uppercase tracking-[0.4em] text-foreground/30">
-             <Link href="#" className="hover:text-accent transition-colors">{tc('privacy')}</Link>
-             <Link href="#" className="hover:text-accent transition-colors">{tc('terms')}</Link>
+             <Link href="#footer" className="hover:text-accent transition-colors">{tc('privacy')}</Link>
+             <Link href="#footer" className="hover:text-accent transition-colors">{tc('terms')}</Link>
              <span className="hidden md:block">&bull;</span>
              <span>&copy; 2026 {tc('brand_name')}</span>
              
              <button 
+                type="button"
                 onClick={scrollToTop}
                 className="flex items-center gap-4 group text-accent ml-4"
               >

@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
-import { useTranslations } from 'next-intl';
 
 export function ContactFormSection() {
-  const t = useTranslations('Contact');
+  const t = useTranslations("Contact");
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -28,10 +28,13 @@ export function ContactFormSection() {
   };
 
   return (
-    <section className="relative py-24 lg:py-48 overflow-hidden bg-background" id="reach-horizon-travels">
+    <section
+      className="relative py-24 lg:py-48 overflow-hidden bg-background"
+      id="reach-horizon-travels"
+    >
       {/* BACKGROUND DECORATIVE IMAGE */}
       <div className="absolute inset-0 z-0">
-        <Image 
+        <Image
           src="/content/banners/passportBanner.webp"
           alt="Contact Background"
           fill
@@ -41,7 +44,6 @@ export function ContactFormSection() {
       </div>
 
       <div className="max-w-[1000px] mx-auto px-6 lg:px-12 relative z-10">
-        
         {/* EDITORIAL HEADER */}
         <div className="text-center mb-24 lg:mb-32">
           <motion.div
@@ -50,13 +52,15 @@ export function ContactFormSection() {
             viewport={{ once: true }}
             className="flex flex-col items-center"
           >
-            <span className="text-[10px] font-bold uppercase tracking-[0.6em] text-accent mb-8">{t('badge')}</span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.6em] text-accent mb-8">
+              {t("badge")}
+            </span>
             <h2 className="text-6xl md:text-8xl lg:text-[10rem] font-serif font-light text-foreground leading-none tracking-tight mb-12">
               Start Your <br />
               <span className="italic text-accent/40">Journey</span>
             </h2>
             <p className="max-w-xl text-xl text-foreground/50 font-light leading-relaxed italic">
-              {t('description')}
+              {t("description")}
             </p>
           </motion.div>
         </div>
@@ -75,7 +79,7 @@ export function ContactFormSection() {
                 <input
                   name="firstName"
                   className="w-full bg-transparent border-b border-border/60 py-4 outline-none font-light text-lg focus:border-accent transition-all placeholder:text-foreground/20"
-                  placeholder={t('fields.firstName')}
+                  placeholder={t("fields.firstName")}
                   required
                 />
               </div>
@@ -83,7 +87,7 @@ export function ContactFormSection() {
                 <input
                   name="lastName"
                   className="w-full bg-transparent border-b border-border/60 py-4 outline-none font-light text-lg focus:border-accent transition-all placeholder:text-foreground/20"
-                  placeholder={t('fields.lastName')}
+                  placeholder={t("fields.lastName")}
                   required
                 />
               </div>
@@ -94,7 +98,7 @@ export function ContactFormSection() {
                 name="email"
                 type="email"
                 className="w-full bg-transparent border-b border-border/60 py-4 outline-none font-light text-lg focus:border-accent transition-all placeholder:text-foreground/20"
-                placeholder={t('fields.email')}
+                placeholder={t("fields.email")}
                 required
               />
             </div>
@@ -104,7 +108,7 @@ export function ContactFormSection() {
                 name="message"
                 rows={2}
                 className="w-full bg-transparent border-b border-border/60 py-4 outline-none font-light text-lg focus:border-accent transition-all resize-none placeholder:text-foreground/20"
-                placeholder={t('fields.placeholder_message')}
+                placeholder={t("fields.placeholder_message")}
                 required
               />
             </div>
@@ -115,14 +119,31 @@ export function ContactFormSection() {
                 className="group flex flex-col items-center gap-6"
               >
                 <div className="w-20 h-20 rounded-full border border-border flex items-center justify-center group-hover:bg-foreground group-hover:text-background transition-all duration-700">
-                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-foreground/40 group-hover:text-foreground transition-colors">{t('submit')}</span>
+                <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-foreground/40 group-hover:text-foreground transition-colors">
+                  {t("submit")}
+                </span>
               </button>
 
               <AnimatePresence>
                 {status === "success" && (
-                  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-accent text-[10px] font-bold uppercase tracking-widest">{t('success')}</motion.p>
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="text-accent text-[10px] font-bold uppercase tracking-widest"
+                  >
+                    {t("success")}
+                  </motion.p>
                 )}
               </AnimatePresence>
             </div>
@@ -131,11 +152,13 @@ export function ContactFormSection() {
 
         {/* BOTTOM DECORATIVE AREA */}
         <div className="mt-32 text-center">
-           <div className="inline-flex items-center gap-8">
-              <div className="w-12 h-px bg-border/60" />
-              <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-foreground/20">Private Inquiry &bull; 2026</span>
-              <div className="w-12 h-px bg-border/60" />
-           </div>
+          <div className="inline-flex items-center gap-8">
+            <div className="w-12 h-px bg-border/60" />
+            <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-foreground/20">
+              Private Inquiry &bull; 2026
+            </span>
+            <div className="w-12 h-px bg-border/60" />
+          </div>
         </div>
       </div>
     </section>

@@ -83,7 +83,7 @@ export default function Navbar() {
           </div>
 
           <Link href="#reach-horizon-travels">
-            <button className="flex items-center gap-3 group">
+            <button type="button" className="flex items-center gap-3 group">
               <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-foreground group-hover:text-accent transition-colors">
                 {t('cta_plan')}
               </span>

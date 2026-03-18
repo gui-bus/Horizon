@@ -33,6 +33,7 @@ export default function LanguageSelector() {
   return (
     <div className="relative">
       <button
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
         disabled={isPending}
         className="flex items-center gap-2 px-3 py-1.5 rounded-full hover:bg-muted transition-colors disabled:opacity-50"
@@ -50,7 +51,13 @@ export default function LanguageSelector() {
       <AnimatePresence>
         {isOpen && (
           <>
-            <div className="fixed inset-0 z-10" onClick={() => setIsOpen(false)} />
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-10" 
+              onClick={() => setIsOpen(false)} 
+            />
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -60,6 +67,7 @@ export default function LanguageSelector() {
               {languages.map((lang) => (
                 <button
                   key={lang.code}
+                  type="button"
                   onClick={() => onSelectChange(lang.code)}
                   className={`w-full flex items-center gap-3 px-3 py-2 text-xs font-bold rounded-xl transition-all ${
                     locale === lang.code 
