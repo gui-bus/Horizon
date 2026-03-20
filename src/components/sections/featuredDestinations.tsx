@@ -8,6 +8,7 @@ import { fadeInUp, viewportOnce } from "@/lib/motion";
 
 export function FeaturedDestinations() {
   const t = useTranslations("FeaturedDestinations");
+  const tc = useTranslations("Common");
   const [activeId, setActiveId] = useState("kyoto");
 
   const items = [
@@ -69,13 +70,12 @@ export function FeaturedDestinations() {
               {t("badge")}
             </span>
             <h2 className="text-6xl md:text-8xl font-serif font-light tracking-tight text-foreground leading-[0.9]">
-              The <br />
-              <span className="italic text-accent/40">Portfolio</span>
+              {t("title_part1")} <br />
+              <span className="italic text-accent/40">{t("title_part2")}</span>
             </h2>
           </div>
           <p className="text-xl text-foreground/40 font-light leading-relaxed max-w-sm pb-2 italic">
-            Handpicked selection of the most extraordinary corners of the globe,
-            curated for the modern explorer.
+            {t("description")}
           </p>
         </motion.div>
 
@@ -159,11 +159,11 @@ export function FeaturedDestinations() {
         <div className="mt-32 pt-16 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-12">
           <div className="flex items-center gap-6">
             <span className="text-[9px] font-bold uppercase tracking-[0.5em] text-foreground/20">
-              Handpicked Selection
+              {tc("handpicked_selection")}
             </span>
             <div className="w-12 h-px bg-border/50" />
             <span className="text-[9px] font-bold uppercase tracking-[0.5em] text-foreground/20">
-              Established 2026
+              {tc("established")} 2026
             </span>
           </div>
 

@@ -19,28 +19,28 @@ export function TabbedTrips() {
         {
           id: "amazon",
           name: t("trips.amazon"),
-          duration: "7 days",
+          duration: tc("days", { count: 7 }),
           price: "$2,100",
           image: "/content/trips/amazonia.webp",
         },
         {
           id: "patagonia",
           name: t("trips.patagonia"),
-          duration: "10 days",
+          duration: tc("days", { count: 10 }),
           price: "$2,500",
           image: "/content/trips/patagonia.webp",
         },
         {
           id: "australia",
           name: t("trips.australia"),
-          duration: "8 days",
+          duration: tc("days", { count: 8 }),
           price: "$2,400",
           image: "/content/trips/australia.webp",
         },
         {
           id: "alaska",
           name: t("trips.alaska"),
-          duration: "7 days",
+          duration: tc("days", { count: 7 }),
           price: "$2,300",
           image: "/content/trips/alaska.webp",
         },
@@ -53,28 +53,28 @@ export function TabbedTrips() {
         {
           id: "kyoto",
           name: t("trips.kyoto"),
-          duration: "5 days",
+          duration: tc("days", { count: 5 }),
           price: "$1,900",
           image: "/content/trips/kyoto.webp",
         },
         {
           id: "paris",
           name: t("trips.paris"),
-          duration: "4 days",
+          duration: tc("days", { count: 4 }),
           price: "$2,000",
           image: "/content/trips/paris.webp",
         },
         {
           id: "rome",
           name: t("trips.rome"),
-          duration: "5 days",
+          duration: tc("days", { count: 5 }),
           price: "$1,850",
           image: "/content/trips/roma.webp",
         },
         {
           id: "mexico",
           name: t("trips.mexico"),
-          duration: "6 days",
+          duration: tc("days", { count: 6 }),
           price: "$1,950",
           image: "/content/trips/mexico.webp",
         },
@@ -87,28 +87,28 @@ export function TabbedTrips() {
         {
           id: "ny",
           name: t("trips.ny"),
-          duration: "4 days",
+          duration: tc("days", { count: 4 }),
           price: "$2,200",
           image: "/content/trips/newYork.webp",
         },
         {
           id: "tokyo",
           name: t("trips.tokyo"),
-          duration: "5 days",
+          duration: tc("days", { count: 5 }),
           price: "$2,300",
           image: "/content/trips/tokyo.webp",
         },
         {
           id: "london",
           name: t("trips.london"),
-          duration: "4 days",
+          duration: tc("days", { count: 4 }),
           price: "$2,100",
           image: "/content/trips/london.webp",
         },
         {
           id: "hk",
           name: t("trips.hk"),
-          duration: "4 days",
+          duration: tc("days", { count: 4 }),
           price: "$2,250",
           image: "/content/trips/hongKong.webp",
         },
@@ -137,8 +137,8 @@ export function TabbedTrips() {
               {t("badge")}
             </span>
             <h2 className="text-6xl md:text-8xl lg:text-[9rem] font-serif font-light text-foreground leading-[0.8] tracking-tight">
-              Curated <br />
-              <span className="italic">Experiences</span>
+              {t("title")} <br />
+              <span className="italic">{t("title_highlight")}</span>
             </h2>
           </motion.div>
           <motion.div
@@ -168,7 +168,7 @@ export function TabbedTrips() {
                 <span
                   className={`text-[9px] font-bold uppercase tracking-[0.4em] transition-colors duration-500 ${activeTab === category.id ? "text-accent" : "text-foreground/20"}`}
                 >
-                  Explore Selection
+                  {t("explore_selection")}
                 </span>
                 <span
                   className={`text-2xl lg:text-3xl font-serif font-light transition-all duration-500 ${activeTab === category.id ? "text-foreground pl-4 border-l-2 border-accent" : "text-foreground/20 group-hover:text-foreground/40"}`}

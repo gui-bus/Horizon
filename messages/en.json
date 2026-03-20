@@ -18,7 +18,9 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "legal": "Legal",
-    "scroll_discover": "Scroll to Discover"
+    "scroll_discover": "Scroll to Discover",
+    "handpicked_selection": "Handpicked Selection",
+    "days": "{count} days"
   },
   "LanguageSelector": {
     "label": "Change language",
@@ -36,7 +38,8 @@
     "menu_offer": "What We Offer",
     "menu_why": "Why Choose Us",
     "menu_destinations": "Destinations",
-    "boutique_tag": "Boutique Experience"
+    "boutique_tag": "Boutique Experience",
+    "alt": "Luxury Travel"
   },
   "Services": {
     "badge": "The Collection",
@@ -44,6 +47,7 @@
     "title_highlight": "Expertise",
     "description": "Every journey we create is thoughtfully curated around experiences, not itineraries. From immersive cultures to untamed landscapes and tailor-made escapes, each path is designed to feel personal, effortless, and unforgettable.",
     "scroll_hint": "Scroll down to see our services",
+    "view_collection": "View Collection",
     "items": {
       "wild": {
         "title": "Wild Escapes",
@@ -68,9 +72,11 @@
     }
   },
   "WhyChooseUs": {
-    "title": "Why Choose",
-    "title_highlight": "Philosophy",
+    "badge": "The Philosophy",
+    "title_part1": "Pure",
+    "title_part2": "Essence",
     "description": "Travel designed with intention, depth, and meaning.",
+    "background_tag": "VALUES",
     "footer_tag": "Commitment to Excellence",
     "items": {
       "experts": {
@@ -101,8 +107,9 @@
   },
   "FeaturedDestinations": {
     "badge": "Curated Destinations",
-    "title_part1": "Curated",
-    "title_part2": "Destinations",
+    "title_part1": "The",
+    "title_part2": "Portfolio",
+    "description": "Handpicked selection of the most extraordinary corners of the globe, curated for the modern explorer.",
     "cta_explore": "Explore All Destinations",
     "book_now": "Book now",
     "items": {
@@ -135,8 +142,10 @@
   },
   "Stats": {
     "badge": "By the numbers",
-    "title": "Horizon in Numbers",
+    "title_part1": "Impact in",
+    "title_part2": "Numbers",
     "description": "Celebrating the journeys, destinations, and unforgettable experiences of our travelers worldwide.",
+    "metric_label": "Metric",
     "items": {
       "destinations": {
         "label": "Destinations",
@@ -159,13 +168,15 @@
   "MaskReveal": {
     "title_part1": "See the World",
     "title_part2": "Differently",
-    "description": "Discover hidden gems, breathtaking views, and moments that turn into lifelong memories."
+    "description": "Discover hidden gems, breathtaking views, and moments that turn into lifelong memories.",
+    "alt": "Reveal"
   },
   "TabbedTrips": {
     "badge": "Collection",
-    "title": "Selected",
+    "title": "Curated",
     "title_highlight": "Experiences",
     "description": "Curated experiences for every traveler. Explore our top destinations.",
+    "explore_selection": "Explore Selection",
     "trip_label": "trip",
     "person": "person",
     "book_now": "Book now",
@@ -196,6 +207,7 @@
     "description": "Questions, suggestions, or ready to start your next adventure? Our team is here to help you explore the world.",
     "speak_title": "Speak with us",
     "speak_desc": "We are here to help you plan your next dream adventure.",
+    "private_inquiry": "Private Inquiry",
     "fields": {
       "firstName": "First Name",
       "lastName": "Last Name",
@@ -217,6 +229,7 @@
     "connect_title": "Connect",
     "newsletter_title": "Newsletter",
     "newsletter_desc": "Get the latest travel tips and offers directly in your inbox.",
+    "newsletter_join": "Join",
     "description": "Explore the world with curated experiences, expert guidance, and unforgettable journeys.",
     "newsletter_placeholder": "Enter your email",
     "newsletter_button": "Subscribe",

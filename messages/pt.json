@@ -18,7 +18,9 @@
     "privacy": "Política de Privacidade",
     "terms": "Termos de Serviço",
     "legal": "Jurídico",
-    "scroll_discover": "Role para Descobrir"
+    "scroll_discover": "Role para Descobrir",
+    "handpicked_selection": "Seleção Curada",
+    "days": "{count} dias"
   },
   "LanguageSelector": {
     "label": "Mudar idioma",
@@ -36,7 +38,8 @@
     "menu_offer": "O Que Oferecemos",
     "menu_why": "Por Que Nós",
     "menu_destinations": "Destinos",
-    "boutique_tag": "Experiência Boutique"
+    "boutique_tag": "Experiência Boutique",
+    "alt": "Viagem de Luxo"
   },
   "Services": {
     "badge": "A Coleção",
@@ -44,6 +47,7 @@
     "title_highlight": "Expertise",
     "description": "Cada jornada que criamos é pensada em torno de experiências, não apenas roteiros. De culturas imersivas a paisagens selvagens e refúgios personalizados, cada caminho é desenhado para ser pessoal, leve e inesquecível.",
     "scroll_hint": "Role para baixo para ver nossos serviços",
+    "view_collection": "Ver Coleção",
     "items": {
       "wild": {
         "title": "Escapadas Selvagens",
@@ -68,9 +72,11 @@
     }
   },
   "WhyChooseUs": {
-    "title": "Por Que Escolher a",
-    "title_highlight": "Filosofia",
+    "badge": "A Filosofia",
+    "title_part1": "Pura",
+    "title_part2": "Essência",
     "description": "Viagens desenhadas com intenção, profundidade e significado.",
+    "background_tag": "VALORES",
     "footer_tag": "Compromisso com a Excelência",
     "items": {
       "experts": {
@@ -101,8 +107,9 @@
   },
   "FeaturedDestinations": {
     "badge": "Destinos Curados",
-    "title_part1": "Destinos",
-    "title_part2": "Curados",
+    "title_part1": "O",
+    "title_part2": "Portfólio",
+    "description": "Seleção criteriosa dos cantos mais extraordinários do globo, com curadoria para o explorador moderno.",
     "cta_explore": "Explorar Todos os Destinos",
     "book_now": "Reserve agora",
     "items": {
@@ -135,8 +142,10 @@
   },
   "Stats": {
     "badge": "Em números",
-    "title": "Horizon em Números",
+    "title_part1": "Impacto em",
+    "title_part2": "Números",
     "description": "Celebrando as jornadas, destinos e experiências inesquecíveis de nossos viajantes pelo mundo.",
+    "metric_label": "Métrica",
     "items": {
       "destinations": {
         "label": "Destinos",
@@ -159,13 +168,15 @@
   "MaskReveal": {
     "title_part1": "Veja o Mundo",
     "title_part2": "Diferente",
-    "description": "Descubra joias escondidas, vistas de tirar o fôlego e momentos que se tornam memórias para a vida toda."
+    "description": "Descubra joias escondidas, vistas de tirar o fôlego e momentos que se tornam memórias para a vida toda.",
+    "alt": "Revelar"
   },
   "TabbedTrips": {
     "badge": "Coleção",
     "title": "Experiências",
     "title_highlight": "Selecionadas",
     "description": "Experiências selecionadas para cada tipo de viajante. Explore nossos principais destinos.",
+    "explore_selection": "Explorar Seleção",
     "trip_label": "viagem",
     "person": "pessoa",
     "book_now": "Reserve agora",
@@ -196,6 +207,7 @@
     "description": "Dúvidas, sugestões ou pronto para começar sua próxima aventura? Nossa equipe está aqui para ajudar você a explorar o mundo.",
     "speak_title": "Fale conosco",
     "speak_desc": "Estamos aqui para ajudar você a planejar sua próxima aventura dos sonhos.",
+    "private_inquiry": "Inquérito Privado",
     "fields": {
       "firstName": "Nome",
       "lastName": "Sobrenome",
@@ -217,7 +229,8 @@
     "connect_title": "Conectar",
     "newsletter_title": "Newsletter",
     "newsletter_desc": "Receba as últimas dicas de viagem e ofertas diretamente na sua caixa de entrada.",
-    "description": "Explore o mundo com experiências curadas, orientação especializada e jornadas inesquecíveis.",
+    "newsletter_join": "Participar",
+    "description": "Explore the mundo com experiências curadas, orientação especializada e jornadas inesquecíveis.",
     "newsletter_placeholder": "Digite seu e-mail",
     "newsletter_button": "Inscrever-se",
     "newsletter_success": "Inscrito com sucesso!",

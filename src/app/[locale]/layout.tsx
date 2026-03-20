@@ -20,7 +20,12 @@ const fraunces = Playfair_Display({
   subsets: ["latin"],
 });
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations("Metadata");
 
   return {
@@ -33,17 +38,28 @@ export async function generateMetadata(): Promise<Metadata> {
 
     description: t("description"),
 
-    applicationName: "Horizon Travels",
+    applicationName: "HORIZON Travels",
 
-    keywords: [
-      "travel agency",
-      "luxury travel",
-      "custom trips",
-      "adventure travel",
-      "Horizon Travels",
-      "experiential journeys",
-      "travel planning",
-    ],
+    keywords:
+      locale === "pt"
+        ? [
+            "agência de viagens",
+            "viagens de luxo",
+            "viagens personalizadas",
+            "viagens de aventura",
+            "Horizon Travels",
+            "jornadas experienciais",
+            "planejamento de viagens",
+          ]
+        : [
+            "travel agency",
+            "luxury travel",
+            "custom trips",
+            "adventure travel",
+            "Horizon Travels",
+            "experiential journeys",
+            "travel planning",
+          ],
 
     authors: [
       {
@@ -62,16 +78,16 @@ export async function generateMetadata(): Promise<Metadata> {
       title: t("title"),
       description: t("description"),
       url: "https://horizon-travels.vercel.app",
-      siteName: "Horizon Travels",
+      siteName: "HORIZON Travels",
       images: [
         {
           url: "/og-image.png",
           width: 1200,
           height: 630,
-          alt: "Horizon Travels — Curated Journeys",
+          alt: `${t("title")} — Curated Journeys`,
         },
       ],
-      locale: "en_US",
+      locale: locale === "pt" ? "pt_BR" : "en_US",
       type: "website",
     },
 

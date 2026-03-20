@@ -75,7 +75,7 @@ export default function HeroScrollSection() {
           >
             <Image
               src="/content/banners/womanHero.webp"
-              alt="Luxury Travel"
+              alt={t("alt")}
               fill
               className="object-cover"
               priority

@@ -39,7 +39,7 @@ export default function MaskRevealSection() {
         >
           <Image
             src="/content/banners/dividerBanner.webp"
-            alt="Reveal"
+            alt={t("alt")}
             fill
             className="object-cover scale-105"
             priority

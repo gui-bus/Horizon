@@ -83,7 +83,7 @@ export function TravelFooter() {
                   className="w-full bg-transparent border-b border-border/60 py-4 outline-none font-light text-lg focus:border-accent transition-all placeholder:text-foreground/20"
                 />
                 <button type="button" className="absolute right-0 bottom-4 text-[9px] font-bold uppercase tracking-[0.3em] text-accent group-hover:translate-x-2 transition-all duration-500">
-                  Join
+                  {t('newsletter_join')}
                 </button>
               </div>
             </div>

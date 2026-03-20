@@ -29,6 +29,7 @@ function StatItem({
 }) {
   const { ref, count } = useCountUp(value, 2000);
   const { ref: visRef } = useScrollAnimation(0.3);
+  const t = useTranslations("Stats");
 
   return (
     <motion.div
@@ -41,7 +42,7 @@ function StatItem({
     >
       <div className="flex flex-col gap-4">
         <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-accent/40 group-hover:text-accent transition-colors duration-700">
-          Metric_0{delay / 150 + 1}
+          {t("metric_label")}_0{delay / 150 + 1}
         </span>
         <div ref={ref as React.RefObject<HTMLDivElement>}>
           <span className="text-7xl lg:text-9xl font-serif font-light tracking-tighter text-foreground tabular-nums leading-none">
@@ -127,8 +128,8 @@ export function StatsSection() {
               {t("badge")}
             </span>
             <h2 className="text-6xl md:text-8xl lg:text-[10rem] font-serif font-light text-foreground leading-[0.8] tracking-tight">
-              Impact in <br />
-              <span className="italic">Numbers</span>
+              {t("title_part1")} <br />
+              <span className="italic">{t("title_part2")}</span>
             </h2>
           </motion.div>
           <motion.div

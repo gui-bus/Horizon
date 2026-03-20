@@ -56,8 +56,8 @@ export function ContactFormSection() {
               {t("badge")}
             </span>
             <h2 className="text-6xl md:text-8xl lg:text-[10rem] font-serif font-light text-foreground leading-none tracking-tight mb-12">
-              Start Your <br />
-              <span className="italic text-accent/40">Journey</span>
+              {t("title_part1")} <br />
+              <span className="italic text-accent/40">{t("title_part2")}</span>
             </h2>
             <p className="max-w-xl text-xl text-foreground/50 font-light leading-relaxed italic">
               {t("description")}
@@ -155,7 +155,7 @@ export function ContactFormSection() {
           <div className="inline-flex items-center gap-8">
             <div className="w-12 h-px bg-border/60" />
             <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-foreground/20">
-              Private Inquiry &bull; 2026
+              {t("private_inquiry")} &bull; 2026
             </span>
             <div className="w-12 h-px bg-border/60" />
           </div>

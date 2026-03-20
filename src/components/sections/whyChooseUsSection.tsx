@@ -62,11 +62,11 @@ export function WhyChooseUsSection() {
           >
             <div className="sticky top-32">
               <span className="text-[10px] font-bold uppercase tracking-[0.6em] text-accent mb-8 block">
-                The Philosophy
+                {t("badge")}
               </span>
               <h2 className="text-7xl md:text-8xl lg:text-[9rem] font-serif font-light text-foreground leading-[0.8] mb-12">
-                Pure <br />
-                <span className="italic">Essence</span>
+                {t("title_part1")} <br />
+                <span className="italic">{t("title_part2")}</span>
               </h2>
               <div className="w-24 h-px bg-accent mb-12" />
               <p className="text-xl text-foreground/50 font-light leading-relaxed max-w-sm italic">
@@ -117,7 +117,7 @@ export function WhyChooseUsSection() {
       {/* LARGE BACKGROUND DECORATIVE TEXT */}
       <div className="absolute -bottom-20 -right-20 pointer-events-none overflow-hidden h-[400px] w-full select-none opacity-[0.02]">
         <p className="text-[30rem] font-serif font-black leading-none text-foreground tracking-tighter">
-          VALUES
+          {t("background_tag")}
         </p>
       </div>
     </section>

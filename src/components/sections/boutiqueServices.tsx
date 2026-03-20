@@ -58,9 +58,9 @@ export default function BoutiqueServices() {
             {t("badge")}
           </span>
           <h2 className="text-7xl md:text-9xl lg:text-[11rem] font-serif font-light text-foreground leading-[0.8] tracking-tighter uppercase">
-            The <br />
+            {t("title")} <br />
             <span className="italic text-accent/40 lowercase ml-12">
-              Expertise
+              {t("title_highlight")}
             </span>
           </h2>
         </motion.div>
@@ -115,7 +115,7 @@ export default function BoutiqueServices() {
                     className="group flex items-center gap-8 text-[10px] font-bold uppercase tracking-[0.4em] text-foreground hover:text-accent transition-all duration-500"
                   >
                     <span className="group-hover:tracking-[0.6em] transition-all duration-500">
-                      View Collection
+                      {t("view_collection")}
                     </span>
                     <div className="w-16 h-px bg-accent group-hover:w-24 group-hover:bg-foreground transition-all duration-500" />
                   </button>
