@@ -1,21 +1,17 @@
-# <p align="center">HORIZON TRAVELS</p>
+# <p align="center">HORIZON</p>
 
 <p align="center">
-  <strong>Curadoria de Experiências Extraordinárias: Onde o Luxo Editorial Encontra a Exploração Global.</strong>
-</p>
-
-<p align="center">
-  <a href="https://horizon.guibus.dev/"><img src="https://img.shields.io/badge/Live_Demo-HORIZON-c5a059?style=for-the-badge&logo=vercel" alt="Live Demo" /></a>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Next.js-16.1.1-black?style=flat-square&logo=next.js" alt="Next.js" />
-  <img src="https://img.shields.io/badge/React-19.2.3-blue?style=flat-square&logo=react" alt="React" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?style=flat-square&logo=tailwind-css" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/TypeScript-5.x-blue?style=flat-square&logo=typescript" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/next--intl-4.8.3-green?style=flat-square" alt="next-intl" />
-  <img src="https://img.shields.io/badge/Framer_Motion-12.x-ff69b4?style=flat-square&logo=framer" alt="Framer Motion" />
-  <img src="https://img.shields.io/badge/Biome-2.2-764ABC?style=flat-square&logo=biome" alt="Biome" />
+  <img alt="React" height="60" width="60" src="https://github.com/gui-bus/TechIcons/blob/main/Dark/React.svg">
+  <img alt="NextJS" height="60" width="60" src="https://github.com/gui-bus/TechIcons/blob/main/Dark/NextJS.svg">
+  <img alt="Typescript" height="60" width="60" src="https://github.com/gui-bus/TechIcons/blob/main/Dark/Typescript.svg">
+  <img alt="Tailwind" height="60" width="60" src="https://github.com/gui-bus/TechIcons/blob/main/Dark/TailwindCSS.svg">
+  <img alt="Framer Motion" height="60" width="60" src="https://github.com/gui-bus/TechIcons/blob/main/Dark/Framer%20Motion.svg">
+  <img alt="Phosphor Icons" height="60" width="60" src="https://github.com/gui-bus/TechIcons/blob/main/Dark/Phosphor%20Icons.svg">
+  <img alt="Biome" height="60" width="60" src="https://github.com/gui-bus/TechIcons/blob/main/Dark/Biome.svg">
+  <img alt="Husky" height="60" width="60" src="https://github.com/gui-bus/TechIcons/blob/main/Dark/Husky.svg">
+  <img alt="Conventional Commits" height="60" width="60" src="https://github.com/gui-bus/TechIcons/blob/main/Dark/Conventional%20Commits.svg">
+  <img alt="Gemini" height="60" width="60" src="https://github.com/gui-bus/TechIcons/blob/main/Dark/Gemini.svg">
+  <img alt="Windsurf" height="60" width="60" src="https://github.com/gui-bus/TechIcons/blob/main/Dark/Windsurf.svg">
 </p>
 
 ---
@@ -58,44 +54,6 @@ O projeto utiliza o **next-intl** com uma estratégia de detecção via middlewa
 - **Tailwind CSS v4:** Explora as novas capacidades da engine v4 para uma gestão de temas mais performática e declarativa.
 - **Framer Motion:** Orquestração de animações complexas baseadas em viewport e scroll progress, garantindo 60fps em interações de luxo.
 - **Biome:** Pipeline de linting e formatação ultra-rápido que garante a integridade e padronização do código.
-
----
-
-## 🏗️ Estrutura Arquitetural
-
-```text
-├── messages/             # Dicionários de tradução (en.json, pt.json)
-├── src/
-│   ├── app/
-│   │   └── [locale]/     # Next.js App Router (Layouts e Páginas traduzidas)
-│   ├── components/
-│   │   ├── sections/     # Componentes de seção (Hero, Services, Stats...)
-│   │   └── ui/           # Elementos de interface reutilizáveis
-│   ├── i18n/             # Configurações de request e mapeamento locale
-│   ├── lib/              # Motion variants e utilitários de animação
-│   └── proxy.ts          # Middleware inteligente de internacionalização
-└── biome.json            # Configuração de qualidade de código
-```
-
----
-
-## 🧪 Engenharia de Qualidade
-
-A consistência do projeto é mantida através de processos rigorosos de build e linting:
-- **Zero Strings Hardcoded:** 100% dos textos são extraídos do sistema de i18n.
-- **Semantic HTML:** Uso correto de tags e atributos de acessibilidade (como `type="button"` em todos os gatilhos).
-- **Responsive Mastery:** Layouts que se transformam de composições editoriais amplas em experiências mobile focadas e limpas.
-
-Para rodar o projeto localmente:
-```bash
-pnpm install
-pnpm dev
-```
-
-Para validar o build:
-```bash
-pnpm build
-```
 
 ---
 <p align="center">
